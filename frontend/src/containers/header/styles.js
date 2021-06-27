@@ -25,7 +25,6 @@ export const InnerContainer = styled.div `
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border: 1px solid white
 `
 export const Logo = styled.img `
     max-height: 100%;

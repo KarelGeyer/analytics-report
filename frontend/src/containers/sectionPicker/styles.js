@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const MainWrapper = styled.div `
     width: 100%;
-    border: 1px solid black;
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
@@ -41,6 +40,5 @@ export const Heading = styled.h2 `
 export const Input = styled.input `
     height: 40px;
     padding: 10px;
-    border: 1px solid black;
     border-radius: 5px;
 `

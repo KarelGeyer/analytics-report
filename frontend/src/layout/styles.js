@@ -12,5 +12,5 @@ export const MaxWidthWrapper = styled.div `
     display: flex;
     align-items: center;
     flex-direction: column;
-    border: 1px solid black
+    background-color: rgb(255,255,255,0.9);
 `

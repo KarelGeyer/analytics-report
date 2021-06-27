@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const MainWrapper = styled.div `
     width: 100%;
-    border: 1px solid grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,7 +11,6 @@ export const MainWrapper = styled.div `
 export const GraphWrapper = styled.div `
     width: 100%;
     padding: 25px 40px 20px 0px;
-    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
