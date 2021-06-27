@@ -20,7 +20,7 @@ const Button = styled.button `
 `
 
 const SectionPicker = () => {
-    const buttons = ["Products", "Categories", "Data", "Customers", "Entrance Points", "MKT kanály"]
+    const buttons = ["Products", "Categories", "Data", "Customers", "MKT kanály"]
 
     const {setState} = useContext(Context)
 

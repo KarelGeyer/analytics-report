@@ -1,45 +1,85 @@
 import React from 'react'
-import {MainWrapper, Heading, GraphWrapper} from "./styles"
-import {XYPlot, XAxis, YAxis, HorizontalGridLines, VerticalGridLines, VerticalBarSeries} from 'react-vis';
+import {MainWrapper, Heading, GraphWrapper, BarWrapper} from "./styles"
+import { Bar } from 'react-chartjs-2'
 
 
 const Products = () => {
     const month = "July"
-    const fakeData = [
-        {x:"Playstation 5 825GB", y: 2000},
-        {x:"Playstation 5 825GB White", y: 1500},
-        {x:"Nintendo Switch Neon Red/Blue", y: 1200},
-        {x:"Playstation Plus členství 12", y: 1000},
-        {x:"Ratchet a Clank: Rift Apart", y: 1000},
-        {x:"Kingdome Come Soška", y: 800},
-        {x:"D&D Enhanced Edition", y: 700},
-        {x:"Cyberpunk 2077", y: 200},
-        {x:"Nintendo Switch 2019", y: 200},
-        {x:"Resident Evil Village", y: 150},
-    ]
     return (
         <>
             <MainWrapper>
                 <Heading> Products in {month} </Heading>
                 <GraphWrapper>
-                    <XYPlot margin={{bottom: 120, left: 60}} xType="ordinal" width={500} height={300}>
-                      <VerticalGridLines />
-                      <HorizontalGridLines />
-                      <XAxis tickLabelAngle={-40} />
-                      <YAxis />
-                      <VerticalBarSeries
-                        data={fakeData}
-                      />
-                    </XYPlot>
-                    <XYPlot margin={{bottom: 120, left: 60}} xType="ordinal" width={500} height={300}>
-                      <VerticalGridLines />
-                      <HorizontalGridLines />
-                      <XAxis tickLabelAngle={-40} />
-                      <YAxis />
-                      <VerticalBarSeries
-                        data={fakeData}
-                      />
-                    </XYPlot>
+                  <BarWrapper>
+                    <Bar 
+                      data={{
+                          labels: ["PS 5 825GB", "PS 5 825GB White", "Nintendo Switch", 'PS plus 12 months', 'Ratcher&Clank : Rift Apart', 'KCD Soška', 'D&D Enhan. Edition', 'Cyberpunk 2077', 'Nintendo Switch 19', 'RE: Village' ],
+                          datasets: [{
+                              label: 'Produkty podle tržeb',
+                              data: [2000, 1500, 1200, 1000, 1000, 800, 700, 200, 200, 150],
+                              backgroundColor: [
+                                  'rgba(255, 99, 132, 0.2)',
+                                  'rgba(54, 162, 235, 0.2)',
+                                  'rgba(255, 206, 86, 0.2)',
+                                  'rgba(75, 192, 192, 0.2)',
+                                  'rgba(153, 102, 255, 0.2)',
+                                  'rgba(255, 159, 64, 0.2)'
+                              ],
+                              borderColor: [
+                                  'rgba(255, 99, 132, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(255, 206, 86, 1)',
+                                  'rgba(75, 192, 192, 1)',
+                                  'rgba(153, 102, 255, 1)',
+                                  'rgba(255, 159, 64, 1)'
+                              ],
+                              borderWidth: 2
+                          }]
+                      }}
+                      options={{
+                          scales: {
+                              y: {
+                                  beginAtZero: true
+                              }
+                          }
+                      }}
+                    />
+                  </BarWrapper>
+                  <BarWrapper>
+                    <Bar 
+                      data={{
+                          labels: ["PS 5 825GB", "PS 5 825GB White", "Nintendo Switch", 'PS plus 12 months', 'Ratcher&Clank : Rift Apart', 'KCD Soška', 'D&D Enhan. Edition', 'Cyberpunk 2077', 'Nintendo Switch 19', 'RE: Village' ],
+                          datasets: [{
+                              label: 'Produkty podle kusů',
+                              data: [280, 80, 30, 190, 90, 60, 75, 175, 20, 85],
+                              backgroundColor: [
+                                  'rgba(255, 99, 132, 0.2)',
+                                  'rgba(54, 162, 235, 0.2)',
+                                  'rgba(255, 206, 86, 0.2)',
+                                  'rgba(75, 192, 192, 0.2)',
+                                  'rgba(153, 102, 255, 0.2)',
+                                  'rgba(255, 159, 64, 0.2)'
+                              ],
+                              borderColor: [
+                                  'rgba(255, 99, 132, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(255, 206, 86, 1)',
+                                  'rgba(75, 192, 192, 1)',
+                                  'rgba(153, 102, 255, 1)',
+                                  'rgba(255, 159, 64, 1)'
+                              ],
+                              borderWidth: 2
+                          }]
+                      }}
+                      options={{
+                          scales: {
+                              y: {
+                                  beginAtZero: true
+                              }
+                          }
+                      }}
+                    />
+                  </BarWrapper>
                 </GraphWrapper>
             </MainWrapper>
         </>

@@ -24,6 +24,14 @@ export const PieWrapper = styled.div `
     justify-content: center;
     align-items: center;
 `
+export const BarWrapper = styled.div `
+    width: 500px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
 export const Heading = styled.h2 `
     font-size: ${props => props.theme.fontSize.h2};
     font-weight: ${props => props.theme.fontWeigth.h2}

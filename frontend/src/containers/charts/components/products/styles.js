@@ -14,6 +14,13 @@ export const GraphWrapper = styled.div `
     padding: 25px 40px 20px 0px;
     border: 1px solid black;
     display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+`
+export const BarWrapper = styled.div `
+    width: 500px;
+    height: 400px;
+    display: flex;
     justify-content: center;
     align-items: center;
 `

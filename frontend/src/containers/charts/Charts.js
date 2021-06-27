@@ -4,6 +4,7 @@ import Products from './components/products/Products'
 import Categories from './components/categories/Categories'
 import Customers from './components/customers/Customers'
 import { Context } from '../../layout/Context'
+import Channels from './components/channels/Channels'
 
 const Charts = () => {
     const {state} = useContext(Context)
@@ -11,9 +12,10 @@ const Charts = () => {
     return (
         <>
             <MainSection>
-                {state === "Products" ? <Products></Products> : null}
-                {state === "Categories" ? <Categories></Categories> : null}
-                {state === "Customers" ? <Customers></Customers> : null}
+                {state === "Products" ? <Products /> : null}
+                {state === "Categories" ? <Categories /> : null}
+                {state === "Customers" ? <Customers /> : null}
+                {state === "MKT kanály" ? <Channels />: null}
             </MainSection>
         </>
     )

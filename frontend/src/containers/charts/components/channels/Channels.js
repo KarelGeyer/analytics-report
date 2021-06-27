@@ -1,14 +1,13 @@
 import React from 'react'
-import {MainWrapper, Heading, GraphWrapper, PieWrapper} from "./styles"
-import { Pie } from 'react-chartjs-2'
+import {MainWrapper, Heading, GraphWrapper, PieWrapper, BarWrapper} from "./styles"
+import { Pie, Bar } from 'react-chartjs-2'
 
-
-const Customers = () => {
+const Channels = () => {
     const month = "July"
     return (
         <>
             <MainWrapper>
-                <Heading> Categories in {month} </Heading>
+                <Heading> Marketing Channels in {month} </Heading>
                 <GraphWrapper>
                     <PieWrapper>
                         <Pie 
@@ -45,49 +44,49 @@ const Customers = () => {
                             }}
                         />
                     </PieWrapper>
-                    <PieWrapper>
-                        <Pie 
+                    <BarWrapper>
+                        <Bar 
                             data={{
-                                labels: ['Female', 'Male'],
+                                labels: ['Organic', 'PPC', 'Social Media', 'Direct', 'Referral' ],
                                 datasets: [{
-                                    label: 'Customers by Sex',
-                                    data: [30.4, 69.6],
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 99, 132, 1)',
-                                        'rgba(54, 162, 235, 1)',
-                                    ],
-                                    borderWidth: 3
-                                }]
-                            }}
-                            options={{
-                                scales: {
-                                    y: {
-                                        beginAtZero: false
-                                    }
-                                }
-                            }}
-                        />
-                    </PieWrapper>
-                    <PieWrapper>
-                        <Pie 
-                            data={{
-                                labels: ['Desktop', 'Mobile', 'Tablet'],
-                                datasets: [{
-                                    label: 'Customers by Device',
-                                    data: [49.7, 49.3, 1],
+                                    label: 'Transakce',
+                                    data: [1100, 900, 850, 1200, 800],
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',
                                         'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
                                     ],
                                     borderColor: [
                                         'rgba(255, 99, 132, 1)',
                                         'rgba(54, 162, 235, 1)',
                                         'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 2
+                                },
+                                {
+                                    label: 'Tržby v tisících',
+                                    data: [1950, 950, 950, 2500, 1600],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
                                     ],
                                     borderWidth: 2
                                 }]
@@ -100,11 +99,11 @@ const Customers = () => {
                                 }
                             }}
                         />
-                    </PieWrapper>
+                    </BarWrapper>
                 </GraphWrapper>
             </MainWrapper>
         </>
     )
 }
 
-export default Customers
+export default Channels

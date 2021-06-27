@@ -1,45 +1,86 @@
 import React from 'react'
-import {MainWrapper, Heading, GraphWrapper} from "./styles"
-import {XYPlot, XAxis, YAxis, HorizontalGridLines, VerticalGridLines, VerticalBarSeries} from 'react-vis';
+import {MainWrapper, Heading, GraphWrapper, BarWrapper} from "./styles"
+import { Bar } from 'react-chartjs-2'
 
 
 const Categories = () => {
     const month = "July"
-    const fakeData = [
-        {x:"Playstation 5 konzole", y: 2000},
-        {x:"Playstation 5", y: 1500},
-        {x:"PC", y: 1200},
-        {x:"Figurky/Sošky", y: 1000},
-        {x:"PS5 hry akční", y: 1000},
-        {x:"SWITCH", y: 800},
-        {x:"Nintendo Switch konzole", y: 700},
-        {x:"PS4 hry akční", y: 200},
-        {x:"not set", y: 200},
-        {x:"PS4 hry RPG", y: 150},
-    ]
+
     return (
         <>
-            <MainWrapper>
+          <MainWrapper>
                 <Heading> Categories in {month} </Heading>
                 <GraphWrapper>
-                    <XYPlot margin={{bottom: 120, left: 60}} xType="ordinal" width={500} height={300}>
-                      <VerticalGridLines />
-                      <HorizontalGridLines />
-                      <XAxis tickLabelAngle={-40} />
-                      <YAxis />
-                      <VerticalBarSeries
-                        data={fakeData}
-                      />
-                    </XYPlot>
-                    <XYPlot margin={{bottom: 120, left: 60}} xType="ordinal" width={500} height={300}>
-                      <VerticalGridLines />
-                      <HorizontalGridLines />
-                      <XAxis tickLabelAngle={-40} />
-                      <YAxis />
-                      <VerticalBarSeries
-                        data={fakeData}
-                      />
-                    </XYPlot>
+                  <BarWrapper>
+                    <Bar 
+                      data={{
+                          labels: ["PS 5 konzole", "PS 5", "PC", 'Figurky > Figurky a Sošky', 'PS5 hry > akční', 'Switch', 'Nintendo Switch konzole', 'Ps4 akční hry', 'Not set', 'PS4 RPG'],
+                          datasets: [{
+                              label: 'Kateorie podle tržeb',
+                              data: [2000, 1500, 1200, 1000, 1000, 800, 700, 200, 200, 150],
+                              backgroundColor: [
+                                  'rgba(255, 99, 132, 0.2)',
+                                  'rgba(54, 162, 235, 0.2)',
+                                  'rgba(255, 206, 86, 0.2)',
+                                  'rgba(75, 192, 192, 0.2)',
+                                  'rgba(153, 102, 255, 0.2)',
+                                  'rgba(255, 159, 64, 0.2)'
+                              ],
+                              borderColor: [
+                                  'rgba(255, 99, 132, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(255, 206, 86, 1)',
+                                  'rgba(75, 192, 192, 1)',
+                                  'rgba(153, 102, 255, 1)',
+                                  'rgba(255, 159, 64, 1)'
+                              ],
+                              borderWidth: 2
+                          }]
+                      }}
+                      options={{
+                          scales: {
+                              y: {
+                                  beginAtZero: true
+                              }
+                          }
+                      }}
+                    />
+                  </BarWrapper>
+                  <BarWrapper>
+                    <Bar 
+                      data={{
+                          labels: ["PS 5 konzole", "PS 5", "PC", 'Figurky > Figurky a Sošky', 'PS5 hry > akční', 'Switch', 'Nintendo Switch konzole', 'Ps4 akční hry', 'Not set', 'PS4 RPG'],
+                          datasets: [{
+                              label: 'Kategorie podle kusů',
+                              data: [280, 80, 30, 190, 90, 60, 75, 175, 20, 85],
+                              backgroundColor: [
+                                  'rgba(255, 99, 132, 0.2)',
+                                  'rgba(54, 162, 235, 0.2)',
+                                  'rgba(255, 206, 86, 0.2)',
+                                  'rgba(75, 192, 192, 0.2)',
+                                  'rgba(153, 102, 255, 0.2)',
+                                  'rgba(255, 159, 64, 0.2)'
+                              ],
+                              borderColor: [
+                                  'rgba(255, 99, 132, 1)',
+                                  'rgba(54, 162, 235, 1)',
+                                  'rgba(255, 206, 86, 1)',
+                                  'rgba(75, 192, 192, 1)',
+                                  'rgba(153, 102, 255, 1)',
+                                  'rgba(255, 159, 64, 1)'
+                              ],
+                              borderWidth: 2
+                          }]
+                      }}
+                      options={{
+                          scales: {
+                              y: {
+                                  beginAtZero: true
+                              }
+                          }
+                      }}
+                    />
+                  </BarWrapper>
                 </GraphWrapper>
             </MainWrapper>
         </>
