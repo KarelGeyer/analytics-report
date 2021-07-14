@@ -29,7 +29,7 @@ const SectionPicker = () => {
     const setStateValue = (e) => {
         setState(e.target.innerText)
     }
-
+    
     return (
         <>
             <MainWrapper>
