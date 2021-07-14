@@ -18,12 +18,12 @@ const Customers = () => {
                                     label: 'Customers by Age',
                                     data: [5, 5.7, 10.4, 15.9, 24.1, 38.9],
                                     backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                        'rgba(255, 206, 86, 0.2)',
-                                        'rgba(75, 192, 192, 0.2)',
-                                        'rgba(153, 102, 255, 0.2)',
-                                        'rgba(255, 159, 64, 0.2)'
+                                        'rgba(255, 99, 132, 0.5)',
+                                        'rgba(54, 162, 235, 0.5)',
+                                        'rgba(255, 206, 86, 0.5)',
+                                        'rgba(75, 192, 192, 0.5)',
+                                        'rgba(153, 102, 255, 0.5)',
+                                        'rgba(255, 159, 64, 0.5)'
                                     ],
                                     borderColor: [
                                         'rgba(255, 99, 132, 1)',
@@ -53,8 +53,8 @@ const Customers = () => {
                                     label: 'Customers by Sex',
                                     data: [30.4, 69.6],
                                     backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 99, 132, 0.5)',
+                                        'rgba(54, 162, 235, 0.5)',
                                     ],
                                     borderColor: [
                                         'rgba(255, 99, 132, 1)',
@@ -80,9 +80,9 @@ const Customers = () => {
                                     label: 'Customers by Device',
                                     data: [49.7, 49.3, 1],
                                     backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(255, 99, 132, 0.5)',
+                                        'rgba(54, 162, 235, 0.5)',
+                                        'rgba(255, 206, 86, 0.5)',
                                     ],
                                     borderColor: [
                                         'rgba(255, 99, 132, 1)',

@@ -1,7 +1,9 @@
 import React, {useContext} from 'react'
 import styled from "styled-components";
 import { Context } from '../../layout/Context';
-import {MainWrapper, InputWrapper, AccountWrapper, AccountButton, Input, Heading, Wrapper} from "./styles"
+import {MainWrapper, InputWrapper, AccountWrapper, AccountButton, Input, Heading, Wrapper, AddNewData, LinkText} from "./styles"
+import { Link } from 'react-router-dom';
+
 
 const Button = styled.button `
     height: 30px;
@@ -35,6 +37,10 @@ const SectionPicker = () => {
                     <InputWrapper>
                         <Heading> Choose Month </Heading>
                         <Input type="month" name="monthPicker" min="2021-07" defaultValue="2021-07"></Input>
+                        <Link to="/addData/ProductsByValue"> 
+                            <AddNewData>add new Data</AddNewData>
+                        </Link> 
+                        
                     </InputWrapper>
                     <AccountWrapper>
                         <p> Karel Geyer </p>
@@ -44,8 +50,12 @@ const SectionPicker = () => {
                     </AccountWrapper>
                 </Wrapper>
                 <Wrapper>
-                    {buttons.map(res => 
-                        <Button onClick={setStateValue} key={res}> {res} </Button>
+                    {buttons.map((res, i) =>                    
+                        <Button onClick={setStateValue} key={i}> 
+                            <Link to={`/charts/${res === "MKT kanály" ? "Channels" : res}`}> 
+                                <LinkText> {res} </LinkText>  
+                            </Link> 
+                        </Button>
                         )}
                 </Wrapper>
             </MainWrapper>

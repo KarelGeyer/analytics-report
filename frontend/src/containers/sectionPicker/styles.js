@@ -33,6 +33,12 @@ export const AccountButton = styled.button `
     border-radius: 2px;
     background-color: ${props => props.theme.color.secondary};
 `
+export const AddNewData = styled.button `
+    height: 40px;
+    width: 150px;
+    border: 1px solid black;
+    border-radius: 5px;
+`
 export const Heading = styled.h2 `
     font-size: ${props => props.theme.fontSize.h2};
     font-weight: ${props => props.theme.fontWeigth.h2};;
@@ -40,5 +46,15 @@ export const Heading = styled.h2 `
 export const Input = styled.input `
     height: 40px;
     padding: 10px;
+    border: 1px solid black;
     border-radius: 5px;
+`
+export const LinkText = styled.div `
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff
 `
