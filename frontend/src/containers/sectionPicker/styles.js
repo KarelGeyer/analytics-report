@@ -20,7 +20,7 @@ export const InputWrapper = styled.div `
     justify-content: space-evenly;
 `
 export const AccountWrapper = styled.div `
-    width: 10%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,6 +32,7 @@ export const AccountButton = styled.button `
     border: 1px solid ${props => props.theme.color.secondary};
     border-radius: 2px;
     background-color: ${props => props.theme.color.secondary};
+    color: white
 `
 export const AddNewData = styled.button `
     height: 40px;
