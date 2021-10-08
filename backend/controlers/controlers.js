@@ -1,4 +1,3 @@
-import mongoose from "mongoose";
 import MainModel from "../models/mainModel.js";
 
 export const getData = async (req, res) => {
@@ -24,7 +23,6 @@ export const postData = async (req, res) => {
 
 export const deleteData = async (req, res) => {
     const {id} = req.params
-    console.log(req.params)
     try {
        await MainModel.findByIdAndRemove(id)
     } catch(error) {
