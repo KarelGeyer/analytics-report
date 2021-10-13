@@ -1,12 +1,8 @@
-import React, {useContext} from 'react'
-import { Context } from '../../../../layout/Context'
+import React from 'react'
 import { Link } from 'react-router-dom';
-import {InputWrapper, Input, Label, NextButton} from "./styles"
+import {InputWrapper, Input, NextButton} from "./styles"
 
 const CustomersData = () => {
-
-    const {formData} = useContext(Context)
-    const {customersData} = formData
 
     return (
         <> 

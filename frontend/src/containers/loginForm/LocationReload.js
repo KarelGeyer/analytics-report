@@ -1,6 +1,8 @@
 import React from 'react'
-import {LocationReloadSection} from './styles';
+// Import data
 import {STATIC_DATA} from '../../data/StaticData';
+// Import styles
+import {LocationReloadSection} from './styles';
 
 const LocationReload = () => {
 

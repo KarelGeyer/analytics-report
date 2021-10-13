@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import axios from 'axios';
+// Import data
 import {STATIC_DATA} from '../../data/StaticData';
+// import styles
 import {LoginSection, Form, Input, FormWrapper, Button} from './styles';
 
 const LoginForm = () => {

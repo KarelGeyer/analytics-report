@@ -12,9 +12,8 @@ const DataComparison = () => {
     const emptycurrentYearArray = []
     const testfce = (e, res) => {
         emptycurrentYearArray.push(...emptycurrentYearArray, e.target.value)
-        console.log(emptycurrentYearArray)
     }
-    console.log(lastYearData)
+
     return (
         <>
             <h2> Data </h2>

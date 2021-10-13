@@ -1,11 +1,11 @@
-import React, {useState, useContext} from 'react'
+import React, {useContext} from 'react'
 import { Context } from '../../../../layout/Context'
 import { Link } from 'react-router-dom';
 import {InputWrapper, Input, NextButton} from "./styles"
 
 const ProductsByValue = () => {
     const dummy = [0,1,2,3,4,5,6,7,8,9,10]
-    const {formData, setFormData} = useContext(Context)
+    const {formData} = useContext(Context)
 
     const saveProductNames = (e, res) => {
         formData.productsByValue.names.splice(res, 1, e.target.value)

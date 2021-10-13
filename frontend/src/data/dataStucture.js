@@ -1,64 +1,81 @@
 const dataStructure = {
     productsByValue: {
-        names: [],
-        values: []
+        names: Array,
+        values: Array
     },
     productsByQuantity: {
-        names: [],
-        values: []
+        names: Array,
+        values: Array
     },
     categoriesByValue: {
-        names: [],
-        values: []
+        names: Array,
+        values: Array
     },
     categoriesByQuantity: {
-        names: [],
-        values: []
+        names: Array,
+        values: Array
     },
     dataComparison: {
         currentYearData: {
-            users: "",
-            newUsers: "",
-            visits: "",
-            conversionRate: "",
-            transactions: "",
-            sales: "",
+            users: Number,
+            newUsers: Number,
+            visits: Number,
+            conversionRate: Number,
+            transactions: Number,
+            sales: Number,
         },
         lastYearData: {
-            users: "",
-            newUsers: "",
-            visits: "",
-            conversionRate: "",
-            transactions: "",
-            sales: "",
+            users: Number,
+            newUsers: Number,
+            visits: Number,
+            conversionRate: Number,
+            transactions: Number,
+            sales: Number,
         }
     },
     customersData: {
-        age:[],
-        sex: [],
-        device: [],
+        customersData: {
+            age:[
+                {
+                    categories: Array,
+                    values: Array
+                }
+            ],
+            sex: [
+                {
+                    categories: Array,
+                    values: Array
+                }
+            ],
+            device: [
+                {
+                    categories: Array,
+                    values: Array
+                }
+            ],
+        },
     },
     marketingChannels: {
         transactions: {
-            organic:"",
-            ppc: "",
-            socialMedia: "",
-            direct: "",
-            refferal: "",
+            organic:Number,
+            ppc: Number,
+            socialMedia: Number,
+            direct: Number,
+            refferal: Number,
         },
         sales: {
-            organic:"",
-            ppc: "",
-            socialMedia: "",
-            direct: "",
-            refferal: "",
+            organic:Number,
+            ppc: Number,
+            socialMedia: Number,
+            direct: Number,
+            refferal: Number,
         },
         visits: {
-            organic:"",
-            ppc: "",
-            socialMedia: "",
-            direct: "",
-            refferal: "",
+            organic:Number,
+            ppc: Number,
+            socialMedia: Number,
+            direct: Number,
+            refferal: Number,
         }
     }
 }

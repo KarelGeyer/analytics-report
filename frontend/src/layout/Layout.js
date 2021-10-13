@@ -13,6 +13,16 @@ import LocationReload from '../containers/loginForm/LocationReload'
 const Layout = () => {
     const [state, setState] = useState("Products")
     const [formData, setFormData] = useState(dataStructure)
+    const [chartsData, setChartsData] = useState()
+    const [selectedMonth, setSelectedMonth] = useState(() => {
+            const thisDate = new Date()
+            const thisMonth = thisDate.getMonth()
+            const months = ["Leden", "Únor", "Březen", "Duben", "Květen", "Červen",
+            "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"]
+
+            return months[thisMonth]
+        }
+    )
     const [user, setUser] = useState(null)
 
     useEffect(() => {
@@ -20,14 +30,21 @@ const Layout = () => {
         setUser(thisUser)
     }, [])
 
-
     return (
         <>
             <Header />
             <MaxWidth>
             <Switch> 
                 <Route path="/login" component={LoginForm} />
-                <Context.Provider value={{state, setState, formData, setFormData, user, setUser}}>
+                <Context.Provider value={
+                        {
+                            state, setState,
+                            formData, setFormData,
+                            chartsData, setChartsData,
+                            user, setUser,
+                            selectedMonth, setSelectedMonth
+                        }
+                    }>
                     {user === null ?
                             <LocationReload />
                         : <> 

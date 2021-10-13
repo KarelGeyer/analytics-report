@@ -1,9 +1,11 @@
-import React, {useContext} from 'react'
-import styled from "styled-components";
+import React, {useContext, useRef} from 'react'
+import { Link } from 'react-router-dom';
+// Import Data and State managment
 import { Context } from '../../layout/Context';
 import {STATIC_DATA} from '../../data/StaticData';
-import {MainWrapper, InputWrapper, AccountWrapper, AccountButton, Input, Heading, Wrapper, AddNewData, LinkText} from "./styles"
-import { Link } from 'react-router-dom';
+// Import styles
+import {MainWrapper, InputWrapper, AccountWrapper, AccountButton, Input, Heading, Wrapper, LinkText} from "./styles"
+import styled from "styled-components";
 
 // Button is kept here for dynamic border and background color
 const Button = styled.button `
@@ -25,13 +27,29 @@ const Button = styled.button `
 const SectionPicker = () => {
     const buttons = ["Products", "Categories", "Data", "Customers", "MKT kanály"]
     const loginUrl = STATIC_DATA.URL.loginPage
+    const monthRef = useRef() 
+    const {setSelectedMonth} = useContext(Context)
+
+    // Get Date
     const thisDate = new Date()
-    let thisMonth = thisDate.getMonth()+1
+    const thisMonth = thisDate.getMonth()+1
     const thisYear = thisDate.getFullYear()
     const calendarDefault = `${thisYear}-${thisMonth}`
+
+    // Select month
+    const selectMonth = () => {
+        const monthPicker = monthRef.current
+        const months = ["Leden", "Únor", "Březen", "Duben", "Květen", "Červen",
+        "Červenec", "Srpen", "Září", "Říjen", "Listopad", "Prosinec"]
+        const value = monthPicker.value
+        const getMonthFromValue = value.split("-")[1]
+
+        return months[getMonthFromValue - 1]
+    }
+
+    // Get User Data
     const getUser = JSON.parse(localStorage.getItem('user'))
     const {userData} = getUser
-    console.log(userData)
 
     const {setState} = useContext(Context)
 
@@ -89,7 +107,8 @@ const SectionPicker = () => {
                 <Wrapper>
                     <InputWrapper>
                         <Heading> Choose Month </Heading>
-                        <Input type="month" name="monthPicker" min="2021-07" defaultValue={calendarDefault}></Input>
+                        <Input ref={monthRef} type="month" name="monthPicker" min="2021-07" max="2025-12" defaultValue={calendarDefault}></Input>
+                        <Button onClick={() => setSelectedMonth(selectMonth())}> Potvrď měsíc </Button>
                         {/* <Link to="/addData/ProductsByValue"> 
                             <AddNewData>add new Data</AddNewData>
                         </Link>  */}

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { Context } from '../../../../layout/Context'
 import { MainWrapper, GraphWrapper, BarWrapper, PieWrapper, Heading} from './styles'
 import { Bar, Pie } from 'react-chartjs-2'
 import { Table } from 'react-bootstrap';
@@ -6,31 +7,42 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const styles = () => {
-    const currentDate = 'July, 2021'
-    const lastYearDate= 'July, 2020'
-    const fakeData = {
-        head: [ 'Uživatelé', 'Noví uživatelé', 'Návštěvy', 'Konverzní poměr', 'Transakce', 'Tržby' ],
-        data: [141758, 111839, 268396, 2.3, 5456, 8458833],
-        lastYearData: [117012, 89802, 217488, 2.4, 4430, 5682747],
+const Data = () => {
+    const {chartsData, selectedMonth} = useContext(Context)
+    const date = new Date()
+    const year = date.getUTCFullYear()
+    const thisMonthAndYear = `${selectedMonth}, ${year}`
+    const lastYearDate = `${selectedMonth}, ${year - 1}`
+    const head =   [ 'Konverzní poměr', 'Noví uživatelé', 'Tržby', 'Transakce', 'Uživatelé', 'Návštěvy']
+
+    const filterDataByMonth = chartsData.filter(item => item.monthCz === selectedMonth)
+    const data = filterDataByMonth[0]
+
+    let currentYearData = ""
+    let lastYearData = ""
+
+    if (data) {
+        currentYearData = Object.values(data.dataComparison.currentYearData);
+        lastYearData = Object.values(data.dataComparison.lastYearData);
     }
+
     return (
         <>
             <MainWrapper>
-                <Heading> Data in {currentDate} </Heading>
+                <Heading> Data v měsíci {selectedMonth} </Heading>
                 <Table striped bordered hover>
                     <thead>
                       <tr>
                         <th> Year </th>
-                        {fakeData.head.map((res, i) => 
+                        {head.map((res, i) => 
                             <th key={i}> {res} </th>
                             )}
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th> {currentDate} </th>
-                        {fakeData.data.map((res, i) => 
+                        <th> {thisMonthAndYear} </th>
+                        {currentYearData.map((res, i) => 
                             i === 3 ? 
                             <th key={i}> {res}% </th>
                             :  <th key={i}> {res} </th>
@@ -38,7 +50,7 @@ const styles = () => {
                       </tr>
                       <tr>
                         <th> {lastYearDate} </th>
-                        {fakeData.lastYearData.map((res, i) => 
+                        {lastYearData.map((res, i) => 
                             i === 3 ? 
                             <th key={i}> {res}% </th>
                             :  <th key={i}> {res} </th>
@@ -51,10 +63,10 @@ const styles = () => {
                 <BarWrapper>
                         <Bar 
                             data={{
-                                labels: fakeData.head.slice(0,3),
+                                labels: head.slice(0,3),
                                 datasets: [{
-                                    label: currentDate,
-                                    data: fakeData.data.slice(0,3),
+                                    label: thisMonthAndYear,
+                                    data: currentYearData.slice(0,3),
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.5)',
                                         'rgba(54, 162, 235, 0.5)',
@@ -69,7 +81,7 @@ const styles = () => {
                                 },
                                 {
                                     label: lastYearDate,
-                                    data: fakeData.lastYearData.slice(0,3),
+                                    data: lastYearData.slice(0,3),
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.5)',
                                         'rgba(54, 162, 235, 0.5)',
@@ -95,10 +107,10 @@ const styles = () => {
                     <PieWrapper>
                         <Pie 
                             data={{
-                                labels: [currentDate, lastYearDate],
+                                labels: [thisMonthAndYear, lastYearDate],
                                 datasets: [{
-                                    label: currentDate,lastYearDate,
-                                    data: [fakeData.data[5], fakeData.lastYearData[5]],
+                                    label: thisMonthAndYear,lastYearDate,
+                                    data: [currentYearData[5], lastYearData[5]],
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.5)',
                                         'rgba(203, 50, 255, 0.5)',
@@ -122,10 +134,10 @@ const styles = () => {
                     <PieWrapper>
                         <Pie 
                             data={{
-                                labels: [currentDate, lastYearDate],
+                                labels: [thisMonthAndYear, lastYearDate],
                                 datasets: [{
-                                    label: currentDate,lastYearDate,
-                                    data: [fakeData.data[4], fakeData.lastYearData[4]],
+                                    label: thisMonthAndYear,lastYearDate,
+                                    data: [currentYearData[4], lastYearData[4]],
                                     backgroundColor: [
                                         'rgba(54, 162, 235, 0.5)',
                                         'rgba(255, 206, 86, 0.5)',
@@ -152,4 +164,4 @@ const styles = () => {
     )
 }
 
-export default styles
+export default Data
