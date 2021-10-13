@@ -1,9 +1,19 @@
 import MainModel from "../models/mainModel.js";
+import august from "../mock/august.js";
+import september from "../mock/september.js"
 
 export const getData = async (req, res) => {
     try {
         const data = await MainModel.find();
-        res.status(200).json(data)
+        const mock = [august, september]
+        res.status(200).send([
+            {
+                data: data
+            },
+            {
+                mock: mock
+            }
+        ])
     } catch(error) {
         res.status(404).json(error)
     }
