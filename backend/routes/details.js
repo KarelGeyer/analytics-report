@@ -1,5 +1,5 @@
 import express from 'express';
-import verify from '../controlers/verifyToken.js';
+import verify from '../app/middlewares/verifyToken.js';
 
 const details = express.Router()
 

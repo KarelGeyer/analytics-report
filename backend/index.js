@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
 
-import routes from './routes/routes.js';
+import data from './routes/data.js';
 import users from './routes/users.js';
 import details from "./routes/details.js";
 
@@ -17,7 +17,7 @@ app.use(express.urlencoded({limit: '30mb', extended: true}))
 app.use(cors())
 
 // Routes
-app.use('/analytics', routes)
+app.use('/analytics', data)
 app.use('/users', users)
 app.use('/details', details)
 
