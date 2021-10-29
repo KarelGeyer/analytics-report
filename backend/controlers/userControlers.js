@@ -25,7 +25,7 @@ export const createNewUser = async (req, res) => {
 		});
 
 		if (user) {
-			return res.send('User with this email already exist')
+			return res.send('User with this email already exist');
 		};
 
 		const salt = await bcrypt.genSalt(10);
@@ -39,8 +39,8 @@ export const createNewUser = async (req, res) => {
 		const savedUser = await newUser.save();
 
 		if (!savedUser) {
-			return res.status(400).send('something went wrong, please try again later')
-		}
+			return res.status(400).send('something went wrong, please try again later');
+		};
 
 		res.status(201).send('account was succesfully created');
 	} catch (err) {
