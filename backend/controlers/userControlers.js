@@ -41,6 +41,7 @@ export const createNewUser = async (req, res) => {
 		if (!savedUser) {
 			return res.status(400).send('something went wrong, please try again later')
 		}
+
 		res.status(201).send('account was succesfully created');
 	} catch (err) {
 		res.status(400).json(err.message);
