@@ -1,10 +1,10 @@
 import express from 'express';
-import verify from '../app/middlewares/verifyToken.js';
+import verify from '../middlewares/verifyToken.js';
 
-const details = express.Router()
+const details = express.Router();
 
 details.get('/', verify, (req, res) => {
-    res.json('This is a simple testing route')
-})
+	res.json('This is a simple testing route');
+});
 
-export default details
+export default details;
