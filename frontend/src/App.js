@@ -1,5 +1,5 @@
 import './App.css';
-import Layout from "./layout/Layout"
+import Layout from "./components/layout/Layout"
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router } from 'react-router-dom';
 
