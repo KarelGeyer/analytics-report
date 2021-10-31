@@ -11,6 +11,18 @@ export const getUsers = async (req, res) => {
 	};
 };
 
+export const getUser = async (req, res) => {
+	try {
+		const user = await User.findOne({
+			email: req.body.email
+		});
+
+		return res.status(201).json(user)
+	} catch (err) {
+		return res.status(404).json(err)
+	};
+};
+
 export const createNewUser = async (req, res) => {
 	const { error } = joiUserSchema.validate(req.body);
 

@@ -1,17 +1,32 @@
+
 const theme = {
-    color: {
-        primary: "#000000",
-        secondary: "#555555",
-        bttn: "#555555",
-    },
-    fontSize: {
-        h1: "3rem",
-        h2: "2rem"
-    },
-    fontWeigth: {
-        h1: "1000",
-        h2: "600"
-    }
+	width: {
+		maxWidth: "1280px",
+	},
+	height: {
+		contentHeight: '600px',
+		headerHeight: '190px',
+	},
+	color: {
+		primary: "#000",
+		secondary: "#555",
+		bttn: "#555",
+		white: "#FFF",
+		backgroundMain: 'rgb(255, 255, 255, 0.9)',
+	},
+	fontSize: {
+		h1: "3rem",
+		h2: "2rem",
+	},
+	fontWeigth: {
+		h1: "1000",
+		h2: "600",
+	},
+	border: {
+		radius: "10px",
+		bottomRadius: "0 0 10px 10px",
+		line: '1px solid black',
+	}
 };
 
 export default theme
