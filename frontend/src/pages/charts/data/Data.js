@@ -30,6 +30,7 @@ const Data = () => {
 
 	const datasets = [
 		{
+			key: 1,
 			isPie: false,
 			label: head.slice(0, 3),
 			set: [{
@@ -64,6 +65,7 @@ const Data = () => {
 			}]
 		},
 		{
+			key: 2,
 			isPie: true,
 			label: [thisMonthAndYear, lastYearDate],
 			set: [{
@@ -81,6 +83,7 @@ const Data = () => {
 			},]
 		},
 		{
+			key: 3,
 			isPie: true,
 			label: data.customersData.device[0].categories,
 			set: [{
@@ -131,14 +134,14 @@ const Data = () => {
 				<GraphWrapper>
 					{datasets.map(dataset =>
 						dataset.isPie ?
-							<PieWrapper>
+							<PieWrapper key={dataset.key}>
 								<PieGraph
 									data={dataset.set}
 									label={dataset.label}
 								/>
 							</PieWrapper>
 							:
-							<BarWrapper>
+							<BarWrapper key={dataset.key}>
 								<BarGraph
 									data={dataset.set}
 									label={dataset.label}

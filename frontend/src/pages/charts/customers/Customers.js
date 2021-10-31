@@ -14,6 +14,7 @@ const Customers = () => {
 
 	const datasets = [
 		{
+			key: 1,
 			label: data.customersData.age[0].categories,
 			set: [{
 				label: 'Customers by Age',
@@ -38,6 +39,7 @@ const Customers = () => {
 			}]
 		},
 		{
+			key: 2,
 			label: data.customersData.sex[0].categories,
 			set: [{
 				label: 'Customers by Sex',
@@ -54,6 +56,7 @@ const Customers = () => {
 			}]
 		},
 		{
+			key: 3,
 			label: data.customersData.device[0].categories,
 			set: [{
 				label: 'Customers by Device',
@@ -78,7 +81,7 @@ const Customers = () => {
 			{data &&
 				<GraphWrapper heading={heading}>
 					{datasets.map(dataset =>
-						<PieWrapper>
+						<PieWrapper key={dataset.key}>
 							<PieGraph
 								data={dataset.set}
 								label={dataset.label}
