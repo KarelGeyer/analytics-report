@@ -1,73 +1,78 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 import { STATIC_DATA } from '../../assets/static_data/StaticData';
+
+import { UserContext } from '../../context/Context';
 import { LoginSection, Form, Input, FormWrapper, Button } from './styles';
 
 const LoginForm = () => {
+	const { user, setUser } = useContext(UserContext);
+
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const storeUserName = (e) => {
-		setEmail(e.target.value)
+	const fetchUrl = STATIC_DATA.URL.loginUser;
+	const userLogin = {
+		email: email,
+		password: password
 	};
 
-	const storePassword = (e) => {
-		setPassword(e.target.value)
-	};
+	const login = (e) => {
+		e.preventDefault();
 
-	const handleSubmit = (e) => {
-		e.preventDefault()
-	};
-
-	const login = () => {
-		const fetchUrl = STATIC_DATA.URL.fetchUser;
-		const redirectUrl = STATIC_DATA.URL.charts;
-		const userLogin = {
-			email: email,
-			password: password
-		};
 		axios.post(fetchUrl, userLogin)
 			.then(res => {
-				const isValid = res.status === 200
-				if (isValid) {
-					const data = res.data;
-					const user = {
-						token: data.token,
-						userData: data.user
-					}
-					localStorage.setItem(`user`, JSON.stringify(user))
-					window.location.href = redirectUrl
-				} else {
-					alert('Něco se pokazilo, prosím, kontaktujte administrátora')
-				}
-			}).catch((err) => (
+				const isValid = res.status === 200;
+
+				if (!isValid) {
+					alert('Něco se pokazilo, prosím, kontaktujte administrátora');
+					return
+				};
+
+				const data = res.data;
+				const user = {
+					token: data.token,
+					email: data.user.email
+				};
+
+				setUser(user);
+			}).catch(() => (
 				alert('Něco se pokazilo, prosím, kontaktujte administrátora')
-			))
+			));
 	};
 
 	return (
 		<LoginSection>
-			<Form onSubmit={handleSubmit}>
+			<Form onSubmit={login}>
 				<FormWrapper>
 					<label>
 						Email:
 					</label>
-					<Input type='text' name='username' onChange={storeUserName} />
+					<Input type='text' name='username' onChange={(e) => setEmail(e.target.value)} />
 				</FormWrapper>
 				<FormWrapper>
 					<label>
 						Heslo:
 					</label>
-					<Input type='password' name='password' onChange={storePassword} />
+					<Input type='password' name='password' onChange={(e) => setPassword(e.target.value)} />
 				</FormWrapper>
 				<FormWrapper>
-					<Button onClick={login}>
+					<Button>
 						Přihlásit se
 					</Button>
+				</FormWrapper>
+				<FormWrapper>
+					<Link to={'/'}>
+						<Button>
+							{user && 'pokračuj'}
+						</Button>
+					</Link>
 				</FormWrapper>
 			</Form>
 		</LoginSection>
 	)
-}
+};
 
-export default LoginForm
+export default LoginForm;

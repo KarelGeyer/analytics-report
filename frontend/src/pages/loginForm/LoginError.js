@@ -1,19 +1,18 @@
-import React from 'react'
+import React from 'react';
+
 import { STATIC_DATA } from '../../assets/static_data/StaticData';
 import { LocationReloadSection } from './styles';
 
-const LocationReload = () => {
-
-	const redirectUrl = STATIC_DATA.URL.loginPage
+const LoginError = ({ user }) => {
+	const redirectUrl = STATIC_DATA.URL.loginPage;
 
 	setTimeout(() => {
-		const thisUser = JSON.parse(localStorage.getItem('user'))
-		const isNotLoggedId = thisUser === null
+		const isNotLoggedId = user === null;
 
 		if (isNotLoggedId) {
 			window.location.href = redirectUrl
-		}
-	}, 5000)
+		};
+	}, 5000);
 
 	return (
 		<>
@@ -27,6 +26,6 @@ const LocationReload = () => {
 			</LocationReloadSection>
 		</>
 	)
-}
+};
 
-export default LocationReload
+export default LoginError;

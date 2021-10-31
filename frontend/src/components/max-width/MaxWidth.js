@@ -1,16 +1,14 @@
-import React from 'react'
-import { MaxWidthSection, MaxWidthWrapper } from "./styles"
+import React from 'react';
+import { MaxWidthSection, BasicLayout } from './styles';
 
-const MaxWidth = ({ children }) => {
-	return (
-		<>
-			<MaxWidthSection>
-				<MaxWidthWrapper>
-					{children}
-				</MaxWidthWrapper>
-			</MaxWidthSection>
-		</>
-	)
-}
+const MaxWidth = ({ children }) => (
+	<>
+		<MaxWidthSection>
+			<BasicLayout>
+				{children}
+			</BasicLayout>
+		</MaxWidthSection>
+	</>
+);
 
-export default MaxWidth
+export default MaxWidth;

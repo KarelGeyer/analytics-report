@@ -1,10 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LoginSection = styled.section`
     height: 500px;
     width: 100%;
 `
-
 export const Form = styled.form`
     display: flex;
     height: 220px;
@@ -21,12 +20,10 @@ export const FormWrapper = styled.div`
     align-items: center;
     margin-top: 15px;
 `
-
 export const Input = styled.input`
     border: 1px solid lightgrey;
     margin-left: 30px;
 `
-
 export const Button = styled.button`
     border-width: 1px;
     width: 100%;
