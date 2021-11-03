@@ -9,6 +9,7 @@ import Charts from '../../pages/charts/Charts';
 import LoginForm from '../../pages/loginForm/LoginForm';
 import LoginError from '../../pages/loginForm/LoginError';
 import MainPage from '../../pages/mainPage/MainPage';
+import Account from '../../pages/account/Account';
 
 const Layout = () => {
 	const [state, setState] = useState('Products');
@@ -29,7 +30,6 @@ const Layout = () => {
 			<MaxWidth>
 				<Switch>
 					<UserContext.Provider value={{ user, setUser }}>
-						<Route path='/' exact component={MainPage} />
 						<Route path='/login' component={LoginForm} />
 						{user === null ?
 							<LoginError user={user} /> :
@@ -38,6 +38,8 @@ const Layout = () => {
 								chartsData, setChartsData,
 								selectedMonth, setSelectedMonth
 							}}>
+								<Route path='/' exact component={MainPage} />
+								<Route path='/account' component={Account} />
 								<Route path='/charts' component={Charts} />
 							</Context.Provider>
 						}
