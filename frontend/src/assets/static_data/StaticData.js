@@ -5,6 +5,7 @@ export const STATIC_DATA = {
 		mainPage: 'http://localhost:3009/',
 		loginUser: 'http://localhost:3027/users/login',
 		fetchUser: 'http://localhost:3027/users/users',
+		fetchUsers: 'http://localhost:3027/users',
 		fetchData: 'http://localhost:3027/analytics',
 	}
 }
