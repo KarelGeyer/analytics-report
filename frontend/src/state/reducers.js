@@ -1,31 +1,53 @@
-import { USER_ACTIONS } from './actions'
+import { USER_TYPES } from './types'
 import { STATIC_DATA } from '../assets/static_data/StaticData'
 import axios from 'axios';
 
-const { ADD_USER, UPDATE_USER, DELETE_USER } = USER_ACTIONS
+const { UPDATE_USER, DELETE_USER } = USER_TYPES
 
 export const userReducer = (user, action) => {
   const { payload } = action;
+  const { token } = user;
+
+  const userInstance = axios.create({
+    baseURL: STATIC_DATA.URL.fetchUsers,
+    headers: { 'auth-token': token && token }
+  });
 
   switch (action.type) {
     case UPDATE_USER:
-      axios.patch(STATIC_DATA.URL.fetchUsers, payload)
-        .then(res => {
-          const { status } = res;
+      if (!token) {
+        return 'nemohli jsme nalézt Váš účet. prosím, přihlašte se znovu'
+      }
 
-          if (status === 201) {
+      userInstance.patch('', {
+        email: payload.email,
+        password: payload.password,
+        newPassword: payload.newPassword
+      })
+        .catch(err => {
+          throw err
+        });
 
-          }
-        })
-        .catch((err) => { return [user] })
       return user;
 
     case DELETE_USER:
-      axios.delete(STATIC_DATA.URL.fetchUsers, { data: payload })
-        .then(res => {
-          console.log(res)
+      if (!token) {
+        return 'nemohli jsme nalézt Váš účet. prosím, přihlašte se znovu'
+      }
+
+      userInstance.delete('', {
+        data: {
+          email: payload.email,
+          password: payload.password
+        }
+      })
+        .then(() => {
+          localStorage.clear();
+          window.location.href = STATIC_DATA.URL.loginPage
         })
-        .catch((err) => { console.log(err) })
+        .catch((err) => {
+          throw err.message;
+        })
 
       return user;
 

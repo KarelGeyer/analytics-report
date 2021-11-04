@@ -10,12 +10,12 @@ const LoginForm = ({ setUser }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [logedIn, setLogedIn] = useState(false);
-
-	const fetchUrl = STATIC_DATA.URL.loginUser;
 	const userLogin = {
 		email: email,
 		password: password
 	};
+
+	const fetchUrl = STATIC_DATA.URL.loginUser;
 
 	const login = (e) => {
 		e.preventDefault();

@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: 10px auto;
-    width: 30%;
+    width: 35%;
     > input {
         padding: 0 5px;
         border-radius: 5px;
