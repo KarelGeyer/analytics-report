@@ -1,18 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { STATIC_DATA } from '../../assets/static_data/StaticData';
 import { LocationReloadSection } from './styles';
 
-const LoginError = ({ user }) => {
+const LoginError = () => {
 	const redirectUrl = STATIC_DATA.URL.loginPage;
+	const thisUser = sessionStorage.getItem('user');
+	const user = JSON.parse(thisUser);
 
-	setTimeout(() => {
-		const isNotLoggedId = user === null;
+	useEffect(() => {
+		setTimeout(() => {
+			const isNotLoggedId = user === null;
 
-		if (isNotLoggedId) {
-			window.location.href = redirectUrl
-		};
-	}, 5000);
+			if (isNotLoggedId) {
+				window.location.href = redirectUrl;
+			};
+		}, 5000);
+	});
 
 	return (
 		<>

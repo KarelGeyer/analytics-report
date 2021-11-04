@@ -31,3 +31,9 @@ export const Heading = styled.h1`
     color: ${props => props.theme.color.white};
     font-size: ${props => props.theme.fontSize.h1};
 `
+export const Button = styled.button`
+    min-height: 30px;
+    min-width: 80px;
+    text-align: center;
+    border-radius: 5px;
+`
