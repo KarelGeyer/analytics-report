@@ -7,7 +7,7 @@ import { Table } from 'react-bootstrap';
 import GraphWrapper from '../../../components/graphWrapper/GraphWrapper';
 import PieGraph from '../../../components/pie/Pie';
 import BarGraph from '../../../components/bar/Bar';
-import { MainWrapper, BarWrapper, PieWrapper, Heading } from '../styles';
+import { Wrapper, BarWrapper, PieWrapper, Heading } from '../styles';
 
 const Data = () => {
 	const { chartsData, selectedMonth } = useContext(Context);
@@ -104,7 +104,7 @@ const Data = () => {
 
 	return (
 		<>
-			<MainWrapper>
+			<Wrapper>
 				<Heading> Data v měsíci {selectedMonth} </Heading>
 				<Table striped bordered hover>
 					<thead>
@@ -149,7 +149,7 @@ const Data = () => {
 							</BarWrapper>
 					)}
 				</GraphWrapper>
-			</MainWrapper>
+			</Wrapper>
 		</>
 	)
 };

@@ -11,7 +11,6 @@ import Categories from './categories/Categories';
 import Customers from './customers/Customers';
 import Channels from './channels/Channels';
 import Data from './data/Data';
-import { MainSection } from './styles';
 
 const Charts = () => {
 	const { state, chartsData, setChartsData } = useContext(Context);
@@ -26,20 +25,18 @@ const Charts = () => {
 
 	return (
 		<>
-			<MainSection>
-				<SectionPicker state={state} />
-				<Switch>
-					{chartsData &&
-						<>
-							<Route path='/charts/Products' component={Products} />
-							<Route path='/charts/Categories' component={Categories} />
-							<Route path='/charts/Customers' component={Customers} />
-							<Route path='/charts/Channels' component={Channels} />
-							<Route path='/charts/Data' component={Data} />
-						</>
-					}
-				</Switch>
-			</MainSection>
+			<SectionPicker state={state} />
+			<Switch>
+				{chartsData &&
+					<>
+						<Route path='/charts/Products' component={Products} />
+						<Route path='/charts/Categories' component={Categories} />
+						<Route path='/charts/Customers' component={Customers} />
+						<Route path='/charts/Channels' component={Channels} />
+						<Route path='/charts/Data' component={Data} />
+					</>
+				}
+			</Switch>
 		</>
 	)
 };

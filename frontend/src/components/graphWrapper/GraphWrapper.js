@@ -1,13 +1,13 @@
 import React from 'react';
-import { MainWrapper, Section, Heading } from './styles';
+import { Wrapper } from './styles';
 
 const GraphWrapper = ({ children, heading, month }) => (
-  <MainWrapper>
-    <Heading>{heading} {month}</Heading>
-    <Section>
+  <Wrapper>
+    <h2>{heading} {month}</h2>
+    <div>
       {children}
-    </Section>
-  </MainWrapper>
+    </div>
+  </Wrapper>
 );
 
 export default GraphWrapper;

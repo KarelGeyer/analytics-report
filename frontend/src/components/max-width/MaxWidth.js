@@ -1,13 +1,13 @@
 import React from 'react';
-import { MaxWidthSection, BasicLayout } from './styles';
+import { Section, Wrapper } from './styles';
 
 const MaxWidth = ({ children }) => (
 	<>
-		<MaxWidthSection>
-			<BasicLayout>
+		<Section>
+			<Wrapper>
 				{children}
-			</BasicLayout>
-		</MaxWidthSection>
+			</Wrapper>
+		</Section>
 	</>
 );
 

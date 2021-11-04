@@ -1,7 +1,7 @@
 import React, { useContext, useRef } from 'react';
 import { Context } from '../../context/Context';
 import { Link } from 'react-router-dom';
-import { MainWrapper, InputWrapper, Input, Heading, Wrapper, LinkText, Button } from './styles';
+import { Section, Wrapper, LinkText, Button } from './styles';
 
 const SectionPicker = () => {
 	const buttons = ['Products', 'Categories', 'Data', 'Customers', 'MKT kanály'];
@@ -30,15 +30,15 @@ const SectionPicker = () => {
 
 	return (
 		<>
-			<MainWrapper>
-				<Wrapper>
-					<InputWrapper>
-						<Heading> Choose Month </Heading>
-						<Input ref={monthRef} type='month' name='monthPicker' min='2021-07' max='2025-12' defaultValue={calendarDefault}></Input>
+			<Section>
+				<div>
+					<Wrapper>
+						<h2> Choose Month </h2>
+						<input ref={monthRef} type='month' name='monthPicker' min='2021-07' max='2025-12' defaultValue={calendarDefault} />
 						<Button onClick={() => setSelectedMonth(selectMonth())}> Potvrď měsíc </Button>
-					</InputWrapper>
-				</Wrapper>
-				<Wrapper>
+					</Wrapper>
+				</div>
+				<div>
 					{buttons.map((res, i) =>
 						<Button onClick={setStateValue} key={i}>
 							<Link to={`/charts/${res === 'MKT kanály' ? 'Channels' : res}`}>
@@ -46,8 +46,8 @@ const SectionPicker = () => {
 							</Link>
 						</Button>
 					)}
-				</Wrapper>
-			</MainWrapper>
+				</div>
+			</Section>
 		</>
 	)
 };
