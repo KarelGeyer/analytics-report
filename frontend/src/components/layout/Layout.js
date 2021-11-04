@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Context, UserContext } from '../../context/Context';
+import { Context } from '../../context/Context';
 import { Switch, Route } from 'react-router';
 
 import Header from '../header/Header';
@@ -14,7 +14,7 @@ import Account from '../../pages/account/Account';
 const Layout = () => {
 	const [state, setState] = useState('Products');
 	const [chartsData, setChartsData] = useState('');
-	const [user, setUser] = useState('');
+	const [user, setUser] = useState(localStorage.getItem('user'));
 	const [selectedMonth, setSelectedMonth] = useState(() => {
 		const thisDate = new Date();
 		const thisMonth = thisDate.getMonth();
@@ -29,21 +29,19 @@ const Layout = () => {
 			<Header />
 			<MaxWidth>
 				<Switch>
-					<UserContext.Provider value={{ user, setUser }}>
-						<Route path='/login' component={LoginForm} />
-						{user === null ?
-							<LoginError user={user} /> :
-							<Context.Provider value={{
-								state, setState,
-								chartsData, setChartsData,
-								selectedMonth, setSelectedMonth
-							}}>
-								<Route path='/' exact component={MainPage} />
-								<Route path='/account' component={Account} />
-								<Route path='/charts' component={Charts} />
-							</Context.Provider>
-						}
-					</UserContext.Provider>
+					<Route path='/login' render={(props) => (<LoginForm setUser={setUser} />)} />
+					{user === null ?
+						<LoginError /> :
+						<Context.Provider value={{
+							state, setState,
+							chartsData, setChartsData,
+							selectedMonth, setSelectedMonth
+						}}>
+							<Route path='/' exact component={MainPage} />
+							<Route path='/account' component={Account} />
+							<Route path='/charts' component={Charts} />
+						</Context.Provider>
+					}
 				</Switch>
 			</MaxWidth>
 		</>

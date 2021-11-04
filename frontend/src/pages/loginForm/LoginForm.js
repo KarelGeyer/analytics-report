@@ -1,17 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 import { STATIC_DATA } from '../../assets/static_data/StaticData';
 
-import { UserContext } from '../../context/Context';
 import { LoginSection, Form, Input, FormWrapper, Button } from './styles';
 
-const LoginForm = () => {
-	const { user, setUser } = useContext(UserContext);
-
+const LoginForm = ({ setUser }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [logedIn, setLogedIn] = useState(false);
 
 	const fetchUrl = STATIC_DATA.URL.loginUser;
 	const userLogin = {
@@ -37,7 +35,9 @@ const LoginForm = () => {
 					email: data.user.email
 				};
 
+				localStorage.setItem('user', JSON.stringify(user));
 				setUser(user);
+				setLogedIn(true);
 			}).catch(() => (
 				alert('Něco se pokazilo, prosím, kontaktujte administrátora')
 			));
@@ -66,7 +66,7 @@ const LoginForm = () => {
 				<FormWrapper>
 					<Link to={'/'}>
 						<Button>
-							{user && 'pokračuj'}
+							{logedIn && 'pokračuj'}
 						</Button>
 					</Link>
 				</FormWrapper>

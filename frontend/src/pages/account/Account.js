@@ -1,11 +1,11 @@
-import React, { useState, useContext, useReducer } from 'react'
-import { UserContext } from '../../context/Context'
+import React, { useState, useReducer } from 'react'
 import { userReducer } from '../../state/reducers'
 import { USER_ACTIONS } from '../../state/actions'
 import { Form, Heading, Wrapper } from './styles'
 
 const Account = () => {
-  const { user, setUser } = useContext(UserContext);
+  const getuser = localStorage.getItem('user');
+  const user = JSON.parse(getuser);
   const [state, dispatch] = useReducer(userReducer, [user]);
 
   const [email, setEmail] = useState(user.email);
@@ -27,6 +27,8 @@ const Account = () => {
     e.preventDefault()
     dispatch({ type: UPDATE_USER, payload: newUser })
   }
+
+  console.log(state)
 
   return (
     <>

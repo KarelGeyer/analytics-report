@@ -11,11 +11,14 @@ export const userReducer = (user, action) => {
     case UPDATE_USER:
       axios.patch(STATIC_DATA.URL.fetchUsers, payload)
         .then(res => {
-          console.log(res)
-        })
-        .catch((err) => { console.log(err) })
+          const { status } = res;
 
-      break;
+          if (status === 201) {
+
+          }
+        })
+        .catch((err) => { return [user] })
+      return user;
 
     case DELETE_USER:
       axios.delete(STATIC_DATA.URL.fetchUsers, { data: payload })
@@ -24,7 +27,7 @@ export const userReducer = (user, action) => {
         })
         .catch((err) => { console.log(err) })
 
-      break;
+      return user;
 
     default:
       return
