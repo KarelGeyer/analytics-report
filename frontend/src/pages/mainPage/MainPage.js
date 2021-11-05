@@ -4,37 +4,37 @@ import { Link } from 'react-router-dom';
 import graphImage from '../../assets/images/zaklinac.jpg';
 import eventImage from '../../assets/images/n7day.jpg';
 
-import { MainSection, ContentWrapper, CardsWrapper, CardWrapper, CardImage, Imagetext } from './styles.js';
+import { Section, Wrapper, Card } from './styles.js';
 
 const MainPage = () => (
-  <MainSection>
+  <Section>
     <h1>
       Vítej v aplikaci pro správu marketingových dat Xzone.cz
     </h1>
-    <ContentWrapper>
+    <Wrapper>
       <h2>
         vyber si co by si chtěl vidět
       </h2>
-      <CardsWrapper>
-        <CardWrapper>
-          <Link to={'/charts'}>
-            <Imagetext>
+      <div>
+        <Link to={'/charts'}>
+          <Card>
+            <h3>
               Grafy
-            </Imagetext>
-          </Link>
-          <CardImage src={graphImage} />
-        </CardWrapper>
-        <CardWrapper>
-          <Link to={'/charts'}>
-            <Imagetext>
+            </h3>
+            <img src={graphImage} alt="graph section" />
+          </Card>
+        </Link>
+        <Link to={'/charts'}>
+          <Card>
+            <h3>
               Eventy
-            </Imagetext>
-          </Link>
-          <CardImage src={eventImage} />
-        </CardWrapper>
-      </CardsWrapper>
-    </ContentWrapper>
-  </MainSection >
+            </h3>
+            <img src={eventImage} alt="events section" />
+          </Card>
+        </Link>
+      </div>
+    </Wrapper>
+  </Section >
 );
 
 export default MainPage;

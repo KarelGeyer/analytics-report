@@ -13,6 +13,7 @@ const theme = {
 		bttn: "#555",
 		white: "#FFF",
 		backgroundMain: 'rgb(255, 255, 255, 0.9)',
+		deleteBttn: "#FF0000",
 	},
 	fontSize: {
 		h1: "3rem",

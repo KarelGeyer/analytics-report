@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { STATIC_DATA } from '../../assets/static_data/StaticData';
 
 import logo from '../../assets/images/logo.png';
-import { HeaderSection, InnerSection, InnerContainer, Logo, Heading, Button } from './styles';
+import { Section, Wrapper, Button } from './styles';
 
 const Header = () => {
 	const redirectUrl = STATIC_DATA.URL.loginPage;
@@ -16,12 +16,12 @@ const Header = () => {
 
 	return (
 		<>
-			<HeaderSection>
-				<InnerSection>
-					<InnerContainer>
-						<Logo src={logo} alt="logo" />
-						<Heading> Marketing Data </Heading>
-					</InnerContainer>
+			<Section>
+				<div>
+					<Wrapper>
+						<img src={logo} alt="logo" />
+						<h1> Marketing Data </h1>
+					</Wrapper>
 					<div>
 						<Link to='/account'>
 							<Button>
@@ -32,8 +32,8 @@ const Header = () => {
 							Logout
 						</Button>
 					</div>
-				</InnerSection>
-			</HeaderSection>
+				</div>
+			</Section>
 		</>
 	);
 }

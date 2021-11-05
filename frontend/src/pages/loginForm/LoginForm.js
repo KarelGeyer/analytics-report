@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { STATIC_DATA } from '../../assets/static_data/StaticData';
 
-import { LoginSection, Form, Input, FormWrapper, Button } from './styles';
+import { Section, Form } from './styles';
 
 const LoginForm = ({ setUser }) => {
 	const [email, setEmail] = useState('');
@@ -44,34 +44,36 @@ const LoginForm = ({ setUser }) => {
 	};
 
 	return (
-		<LoginSection>
+		<Section>
 			<Form onSubmit={login}>
-				<FormWrapper>
+				<div>
 					<label>
 						Email:
 					</label>
-					<Input type='text' name='username' onChange={(e) => setEmail(e.target.value)} />
-				</FormWrapper>
-				<FormWrapper>
+					<input type='text' name='username' onChange={(e) => setEmail(e.target.value)} />
+				</div>
+				<div>
 					<label>
 						Heslo:
 					</label>
-					<Input type='password' name='password' onChange={(e) => setPassword(e.target.value)} />
-				</FormWrapper>
-				<FormWrapper>
-					<Button>
+					<input type='password' name='password' onChange={(e) => setPassword(e.target.value)} />
+				</div>
+				<div>
+					<button>
 						Přihlásit se
-					</Button>
-				</FormWrapper>
-				<FormWrapper>
+					</button>
+				</div>
+				<div>
 					<Link to={'/'}>
-						<Button>
-							{logedIn && 'pokračuj'}
-						</Button>
+						{logedIn &&
+							<button>
+								{logedIn && 'pokračuj'}
+							</button>
+						}
 					</Link>
-				</FormWrapper>
+				</div>
 			</Form>
-		</LoginSection>
+		</Section>
 	)
 };
 

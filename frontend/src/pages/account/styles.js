@@ -16,15 +16,18 @@ export const Wrapper = styled.div`
     align-items: center;
     margin: 10px auto;
     width: 35%;
+
     > input {
         padding: 0 5px;
         border-radius: 5px;
     };
+
     > button {
         height: 25px;
         width: 130px;
         margin-top: 35px;
     };
+    
     > .delete {
         height: 25px;
         width: 130px;

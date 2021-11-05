@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
-export const MainSection = styled.div`
-    width: 100%;
-`
-export const MainWrapper = styled.div`
+export const Wrapper = styled.div`
     width: 100%;
     display: flex;
     flex-direction: column;
