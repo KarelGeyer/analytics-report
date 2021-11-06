@@ -7,7 +7,7 @@ import logo from '../../assets/images/logo.png';
 import { Section, Wrapper, Button } from './styles';
 
 const Header = () => {
-	const redirectUrl = STATIC_DATA.URL.loginPage;
+	const redirectUrl = STATIC_DATA.URL.LOGIN_PAGE;
 
 	const logout = () => {
 		localStorage.clear()

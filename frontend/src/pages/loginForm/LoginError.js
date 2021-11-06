@@ -4,7 +4,7 @@ import { STATIC_DATA } from '../../assets/static_data/StaticData';
 import { LocationReloadSection } from './styles';
 
 const LoginError = () => {
-	const redirectUrl = STATIC_DATA.URL.loginPage;
+	const redirectUrl = STATIC_DATA.URL.LOGIN_PAGE;
 	const thisUser = sessionStorage.getItem('user');
 	const user = JSON.parse(thisUser);
 

@@ -13,6 +13,7 @@ const theme = {
 		bttn: "#555",
 		white: "#FFF",
 		backgroundMain: 'rgb(255, 255, 255, 0.9)',
+		successBttn: 'rgb(0, 0, 0, 0.7)',
 		deleteBttn: "#FF0000",
 	},
 	fontSize: {
@@ -22,6 +23,7 @@ const theme = {
 	fontWeigth: {
 		h1: "1000",
 		h2: "600",
+		button: "600"
 	},
 	border: {
 		radius: "10px",
