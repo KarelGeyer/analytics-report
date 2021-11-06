@@ -1,14 +1,14 @@
-## 💻Xzone Data Analytics Report
+# 💻Xzone Data Analytics Report
 
 Welcome to Xzone Data Analytics report
 
-# Requirements
+### Requirements
 
 - Node.js
 - yarn
 - npm
 
-# Start the project
+### Start the project
 
 Clone the repository
 
@@ -26,9 +26,9 @@ npm start
 Next create your `.env` file and set port to http://localhost:3009.
 You can set it to other ports as well but you will need to update the preset URLs in `src/assets/static_data/StaticData.js`
 
-### frontend
+## frontend
 
-# Technologies
+### Technologies
 
 - React
 - React Bootstrap
@@ -37,8 +37,8 @@ You can set it to other ports as well but you will need to update the preset URL
 - ChartJs
 - Axios
 
-### Backend
-# Technologies
+## Backend
+### Technologies
 
 - NodeJs
 - Express
@@ -48,7 +48,7 @@ You can set it to other ports as well but you will need to update the preset URL
 - bcrypt
 - Joi
 
-# Database
+### Database
 
 You are going to need to use your own mongoDB database
 ```sh
