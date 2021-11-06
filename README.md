@@ -59,7 +59,7 @@ TOKEN_SECRET = (add your token here for security)
 ```
 
 ## Plan
-# Here are some ideas I would like to implement for the application:
+### Here are some ideas I would like to implement for the application:
 
 - Add Code Formatter -> possibly prettier, eslint
 - Create event page
