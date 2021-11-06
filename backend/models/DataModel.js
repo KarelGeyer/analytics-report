@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 
 const DataModel = mongoose.Schema(
 	{
+		date: String,
+		postedBy: String,
 		productsByValue: {
 			names: Array,
 			values: Array,
