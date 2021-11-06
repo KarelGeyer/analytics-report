@@ -1,15 +1,15 @@
-import { USER_TYPES } from './types'
-import { STATIC_DATA } from '../assets/static_data/StaticData'
+import { USER_TYPES } from '../types'
+import { STATIC_DATA } from '../../assets/static_data/StaticData'
 import axios from 'axios';
 
 const { UPDATE_USER, DELETE_USER } = USER_TYPES
 
-export const userReducer = (user, action) => {
+export const userReducer = (state, action) => {
   const { payload } = action;
-  const { token } = user;
+  const { token } = state;
 
   const userInstance = axios.create({
-    baseURL: STATIC_DATA.URL.fetchUsers,
+    baseURL: STATIC_DATA.URL.FETCH_USERS,
     headers: { 'auth-token': token && token }
   });
 
@@ -28,7 +28,7 @@ export const userReducer = (user, action) => {
           throw err
         });
 
-      return user;
+      return state;
 
     case DELETE_USER:
       if (!token) {
@@ -43,13 +43,13 @@ export const userReducer = (user, action) => {
       })
         .then(() => {
           localStorage.clear();
-          window.location.href = STATIC_DATA.URL.loginPage
+          window.location.href = STATIC_DATA.URL.LOGIN_PAGE
         })
         .catch((err) => {
           throw err.message;
         })
 
-      return user;
+      return state;
 
     default:
       return

@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from 'react'
 
-import { userReducer } from '../../state/reducers'
+import { userReducer } from '../../state/reducers/userReducers'
 import { USER_TYPES } from '../../state/types'
 import { Form, Heading, Wrapper } from './styles'
 

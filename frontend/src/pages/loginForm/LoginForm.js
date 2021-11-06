@@ -15,7 +15,7 @@ const LoginForm = ({ setUser }) => {
 		password: password
 	};
 
-	const fetchUrl = STATIC_DATA.URL.loginUser;
+	const fetchUrl = STATIC_DATA.URL.LOGIN_USER;
 
 	const login = (e) => {
 		e.preventDefault();
