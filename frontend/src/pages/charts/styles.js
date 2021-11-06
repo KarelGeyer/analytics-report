@@ -1,5 +1,25 @@
 import styled from 'styled-components';
 
+export const Section = styled.section`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    > div {
+        display: flex;
+        padding: 25px 0;
+        width: 40%;
+        justify-content: space-evenly;
+
+        > input {
+            border: none;
+            background-color: ${props => props.theme.color.successBttn};
+            color: ${props => props.theme.color.white};
+            width: 85%;
+        }
+    }
+`
 export const Wrapper = styled.div`
     width: 100%;
     display: flex;

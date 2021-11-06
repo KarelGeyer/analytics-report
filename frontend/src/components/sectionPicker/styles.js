@@ -43,6 +43,7 @@ export const LinkText = styled.div`
 `
 export const Button = styled.button`
     height: 30px;
+    min-width: 150px;
     width: 20%;
     border: 1px solid ${props => props.theme.color.primary};
     border-radius: 1px;

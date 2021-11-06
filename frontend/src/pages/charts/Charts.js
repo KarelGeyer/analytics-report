@@ -11,16 +11,17 @@ import Categories from './categories/Categories';
 import Customers from './customers/Customers';
 import Channels from './channels/Channels';
 import Data from './data/Data';
+import AddData from './addData/AddData';
 
 const Charts = () => {
 	const { state, chartsData, setChartsData } = useContext(Context);
 
 	useEffect(() => {
-		axios.get(STATIC_DATA.URL.fetchData)
+		axios.get(STATIC_DATA.URL.FETCH_DATA)
 			.then((res) => {
 				setChartsData(res.data[1].mock);
 			})
-			.catch(err => { })
+			.catch(() => { })
 	}, [setChartsData]);
 
 	return (
@@ -29,11 +30,12 @@ const Charts = () => {
 			<Switch>
 				{chartsData &&
 					<>
-						<Route path='/charts/Products' component={Products} />
-						<Route path='/charts/Categories' component={Categories} />
-						<Route path='/charts/Customers' component={Customers} />
-						<Route path='/charts/Channels' component={Channels} />
-						<Route path='/charts/Data' component={Data} />
+						<Route path='/charts/products' component={Products} />
+						<Route path='/charts/categories' component={Categories} />
+						<Route path='/charts/customers' component={Customers} />
+						<Route path='/charts/channels' component={Channels} />
+						<Route path='/charts/data' component={Data} />
+						<Route path='/charts/add-data' component={AddData} />
 					</>
 				}
 			</Switch>
