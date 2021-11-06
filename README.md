@@ -26,7 +26,7 @@ npm start
 Next create your `.env` file and set port to http://localhost:3009.
 You can set it to other ports as well but you will need to update the preset URLs in `src/assets/static_data/StaticData.js`
 
-## frontend
+## Frontend
 
 ### Technologies
 
