@@ -5,7 +5,7 @@ import dotenv from 'dotenv';
 
 import data from './routes/data.js';
 import users from './routes/users.js';
-import details from './routes/details.js';
+import events from './routes/events.js';
 
 const app = express();
 dotenv.config();
@@ -16,7 +16,7 @@ app.use(cors());
 
 app.use('/analytics', data);
 app.use('/users', users);
-app.use('/details', details);
+app.use('/events', events);
 app.get('/', (req, res) => {
 	res.send('welcome');
 });
