@@ -59,12 +59,19 @@ TOKEN_SECRET = (add your token here for security)
 ```
 
 ## Plan
+### What is currently in progress:
+
+- Create events page - in progress, see https://github.com/KarelGeyer/analytics-report/pull/13
+- Improve User managment
+- Unify token verification, use in all relevant scenarios
+- Create axios instances
+- Split code into more reusable components
+
 ### Here are some ideas I would like to implement for the application:
 
 - Add Code Formatter -> possibly prettier, eslint
 - Improve design of the applicatiion
 - Create Logout Session Timeout
-- Create events page - in progress, see https://github.com/KarelGeyer/analytics-report/pull/13
 - Create user roles -> specifically add admin roles
 - Backend routes documentation
 - Implement mailing system -> for user creation, for instace https://nodemailer.com/about/
