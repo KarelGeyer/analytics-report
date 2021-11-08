@@ -24,7 +24,7 @@ const MainPage = () => (
             <img src={graphImage} alt="graph section" />
           </Card>
         </Link>
-        <Link to={'/charts'}>
+        <Link to={'/events'}>
           <Card>
             <h3>
               Eventy
