@@ -1,52 +1,56 @@
-import React, { useState, useReducer } from 'react'
+import React, { useState } from 'react'
+import { deleteThisUser, updateThisUser } from '../../helpers/axios/userCalls';
 
-import { userReducer } from '../../state/reducers/userReducers'
-import { USER_TYPES } from '../../state/types'
+import SuccessPopup from '../../components/popups/successPopup/SuccessPopup';
+import ErrorPopup from '../../components/popups/errorPopup/ErrorPopup';
+
 import { Form, Heading, Wrapper } from './styles'
 
 const Account = () => {
-  const getuser = localStorage.getItem('user');
-  const user = JSON.parse(getuser);
-
-  const [state, dispatch] = useReducer(userReducer, user);
-  const { UPDATE_USER, DELETE_USER } = USER_TYPES;
+  const user = JSON.parse(localStorage.getItem('user'));
 
   const [showPassword, setShowPassword] = useState(false)
-
-  const [email, setEmail] = useState(state.email);
+  const [email, setEmail] = useState(user.email);
   const [password, setPassword] = useState('');
   const [newPassword, setNewPassword] = useState('');
+  const [success, setSuccess] = useState()
+  const [error, setError] = useState()
+  const [link, setLink] = useState()
 
   const deleteAccount = () => {
-    dispatch({
-      type: DELETE_USER, payload: {
-        email: email,
-        password: password,
-        newPassword: newPassword,
-      }
-    })
+    deleteThisUser(email, password)
+      .then(() => {
+        setSuccess('vymazán')
+        setLink('/login')
+      })
+      .catch((err) => {
+        setError(err)
+      })
   };
 
   const submit = (e) => {
     e.preventDefault()
-    dispatch({
-      type: UPDATE_USER, payload: {
-        email: email,
-        password: password,
-        newPassword: newPassword,
-      }
-    })
+    updateThisUser(email, password, newPassword)
+      .then(() => {
+        setSuccess('upraveny')
+        setLink('/')
+      })
+      .catch((err) => {
+        setError(err)
+      })
   }
 
   return (
     <>
+      {success && <SuccessPopup link={link} event={success} />}
+      {error && <ErrorPopup link='/' error={error} />}
       <Heading> Můj profil</Heading>
       <Form onSubmit={submit}>
         <Wrapper>
           <label>
             Email:
           </label>
-          <input type="email" name="email" defaultValue={user && state.email} onChange={(e) => setEmail(e.target.value)} />
+          <input type="email" name="email" defaultValue={email && email} onChange={(e) => setEmail(e.target.value)} />
         </Wrapper>
         <Wrapper>
           <label>
