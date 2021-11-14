@@ -25,9 +25,6 @@ jobs:
       # Runs a single command using the runners shell
       - name: Try Install
         run: yarn install
-
-      - name: Try Lint
-        run: yarn lint
         
       - name: Try Build
         run: yarn build
