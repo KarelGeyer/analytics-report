@@ -1,5 +1,5 @@
 import React, { useContext, useRef } from 'react';
-import { Context } from '../../context/Context';
+import { Context } from '../../helpers/context/Context';
 import { Link } from 'react-router-dom';
 import { Section, Wrapper, LinkText, Button } from './styles';
 
