@@ -50,13 +50,13 @@ const Account = () => {
           <label>
             Email:
           </label>
-          <input type="email" name="email" defaultValue={email && email} onChange={(e) => setEmail(e.target.value)} />
+          <input type='email' name='email' defaultValue={email && email} onChange={(e) => setEmail(e.target.value)} />
         </Wrapper>
         <Wrapper>
           <label>
             Heslo:
           </label>
-          <input type={showPassword ? "text" : "password"} name="password" required onChange={(e) => setPassword(e.target.value)} />
+          <input type={showPassword ? "text" : "password"} name='password' required onChange={(e) => setPassword(e.target.value)} />
         </Wrapper>
         <Wrapper>
           <label>
@@ -64,14 +64,14 @@ const Account = () => {
           </label>
           <input
             type={showPassword ? "text" : "password"}
-            name="new password"
+            name='new password'
             required
             onChange={(e) => setNewPassword(e.target.value)} />
         </Wrapper>
         <Wrapper>
-          <button type="submit" name="save" onClick={() => setShowPassword(!showPassword)}> Zobrazit Heslo </button>
-          <button type="submit" name="save"> Uložit </button>
-          <button type="button" name="delete" className="delete" onClick={deleteAccount}> Smazat účet </button>
+          <button type='submit' name='save' onClick={() => setShowPassword(!showPassword)}> Zobrazit Heslo </button>
+          <button type='submit' name='save'> Uložit </button>
+          <button type='button' name='delete' className='delete' onClick={deleteAccount}> Smazat účet </button>
         </Wrapper>
       </Form>
     </>

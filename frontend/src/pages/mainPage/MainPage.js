@@ -21,7 +21,7 @@ const MainPage = () => (
             <h3>
               Grafy
             </h3>
-            <img src={graphImage} alt="graph section" />
+            <img src={graphImage} alt='graph section' />
           </Card>
         </Link>
         <Link to={'/events'}>
@@ -29,7 +29,7 @@ const MainPage = () => (
             <h3>
               Eventy
             </h3>
-            <img src={eventImage} alt="events section" />
+            <img src={eventImage} alt='events section' />
           </Card>
         </Link>
       </div>
