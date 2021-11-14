@@ -61,8 +61,8 @@ const Event = ({ location }) => {
           <div>
             {edit ?
               <input
-                type="text"
-                name="event name"
+                type='text'
+                name='event name'
                 defaultValue={name && name}
                 onChange={(e) => setThisName(e.target.value)}
               /> :
@@ -70,13 +70,13 @@ const Event = ({ location }) => {
                 {name && name}
               </h2>
             }
-            <img src={editIcon} alt="edit" onClick={() => setEdit(!edit)} />
+            <img src={editIcon} alt='edit' onClick={() => setEdit(!edit)} />
           </div>
-          <div className="content">
+          <div className='content'>
             {edit ?
               <textarea
-                type="text"
-                name="event name"
+                type='text'
+                name='event name'
                 defaultValue={description && description}
                 onChange={(e) => setThisDescription(e.target.value)}
               /> :
@@ -85,15 +85,15 @@ const Event = ({ location }) => {
               </p>
             }
           </div>
-          <div className="info">
+          <div className='info'>
             <span>
               {author ? author : email}
             </span>
             <span>
               {edit ?
                 <input
-                  type="date"
-                  name="budget"
+                  type='date'
+                  name='budget'
                   defaultValue={fomrattedDate && fomrattedDate}
                   onChange={(e) => setThisDate(e.target.value)}
                 /> :
@@ -102,11 +102,11 @@ const Event = ({ location }) => {
             </span>
           </div>
         </Card>
-        <button className="send" onClick={state === 'new' ? postEvent : updateEvent}>
+        <button className='send' onClick={state === 'new' ? postEvent : updateEvent}>
           Odeslat
         </button>
         {state !== 'new' && (
-          <button className="delete" onClick={deleteEvent}>
+          <button className='delete' onClick={deleteEvent}>
             Smazat
           </button>
         )}

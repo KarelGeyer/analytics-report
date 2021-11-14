@@ -14,42 +14,44 @@ import Events from '../../pages/events/Events';
 import Event from '../../pages/events/event/Event';
 
 const Layout = () => {
-	const [state, setState] = useState('Products');
-	const [chartsData, setChartsData] = useState('');
-	const [user, setUser] = useState(localStorage.getItem('user'));
-	const [selectedMonth, setSelectedMonth] = useState(() => {
-		const thisDate = new Date();
-		const thisMonth = thisDate.getMonth();
-		const months = ['Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen',
-			'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'];
+  const [state, setState] = useState('Products');
+  const [chartsData, setChartsData] = useState('');
+  const [user, setUser] = useState(localStorage.getItem('user'));
+  const [selectedMonth, setSelectedMonth] = useState(() => {
+    const thisDate = new Date();
+    const thisMonth = thisDate.getMonth();
+    const months = [
+      'Leden', 'Únor', 'Březen', 'Duben', 'Květen', 'Červen',
+      'Červenec', 'Srpen', 'Září', 'Říjen', 'Listopad', 'Prosinec'
+    ];
 
-		return months[thisMonth];
-	});
+    return months[thisMonth];
+  });
 
-	return (
-		<>
-			<Header />
-			<MaxWidth>
-				<Switch>
-					<Route path='/login' render={(props) => (<LoginForm setUser={setUser} />)} />
-					{user === null ?
-						<LoginError /> :
-						<Context.Provider value={{
-							state, setState,
-							chartsData, setChartsData,
-							selectedMonth, setSelectedMonth
-						}}>
-							<Route path='/' exact component={MainPage} />
-							<Route path='/account' component={Account} />
-							<Route path='/charts' component={Charts} />
-							<Route path='/events' exact component={Events} />
-							<Route path='/events/:id' component={Event} />
-						</Context.Provider>
-					}
-				</Switch>
-			</MaxWidth>
-		</>
-	)
+  return (
+    <>
+      <Header />
+      <MaxWidth>
+        <Switch>
+          <Route path='/login' render={(props) => (<LoginForm setUser={setUser} />)} />
+          {user === null ?
+            <LoginError /> :
+            <Context.Provider value={{
+              state, setState,
+              chartsData, setChartsData,
+              selectedMonth, setSelectedMonth
+            }}>
+              <Route path='/' exact component={MainPage} />
+              <Route path='/account' component={Account} />
+              <Route path='/charts' component={Charts} />
+              <Route path='/events' exact component={Events} />
+              <Route path='/events/:id' component={Event} />
+            </Context.Provider>
+          }
+        </Switch>
+      </MaxWidth>
+    </>
+  )
 };
 
 export default Layout;

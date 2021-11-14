@@ -68,16 +68,16 @@ const AddData = () => {
   return (
     <Section>
       <div>
-        <input type="file" accepts=".csv" ref={input} />
+        <input type='file' accepts='.csv' ref={input} />
       </div>
       <div>
         <SuccessWrapper success={converted}>
-          <button type="button" onClick={convertCsvToJson}>
+          <button type='button' onClick={convertCsvToJson}>
             Submit
           </button>
         </SuccessWrapper>
         <SuccessWrapper success={uploaded}>
-          <button type="button" onClick={sendData}>
+          <button type='button' onClick={sendData}>
             Odeslat
           </button>
         </SuccessWrapper>
@@ -89,7 +89,7 @@ const AddData = () => {
         data musí být ve správném formátu, jinak se data neuloží. Je to opatření proti nahrání špatně formátovaných dat, které by mohli poškodit funkcionalitu aplikace
       </p>
       <p>
-        pro nahrání dat stačí vyplnit tabulku v excelu nebo v google sheets podle tohoto vzoru -<a href={linkToExampleTable} target="_blank" rel="noreferrer"> klikěnte zde </a> -
+        pro nahrání dat stačí vyplnit tabulku v excelu nebo v google sheets podle tohoto vzoru -<a href={linkToExampleTable} target='_blank' rel='noreferrer'> klikěnte zde </a> -
       </p>
       <p>
         zde pod textem si můžete zkontrolovat, zda tabulka prošla základní validací

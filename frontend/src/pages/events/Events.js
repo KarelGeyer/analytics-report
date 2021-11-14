@@ -38,46 +38,46 @@ const Events = () => {
         Seznam Eventů
       </h1>
       <Wrapper>
-        <div className="create-event">
-          <div className="date">
+        <div className='create-event'>
+          <div className='date'>
           </div>
-          <div className="event">
+          <div className='event'>
             <p>
               Vytvoř nový event
             </p>
           </div>
-          <div className="author">
+          <div className='author'>
           </div>
-          <div className="link">
+          <div className='link'>
             <Link to={{
               pathname: `events/create-event}`,
               state: "new"
             }}>
-              <img src={addIcon} alt="add icon" />
+              <img src={addIcon} alt='add icon' />
             </Link>
           </div>
         </div>
         {events && events.map(event =>
           <div key={event._id}>
-            <div className="date">
+            <div className='date'>
               {event.date.split('T')[0]}
             </div>
-            <div className="event">
+            <div className='event'>
               <p>
                 {event.name}
               </p>
             </div>
-            <div className="author">
+            <div className='author'>
               <p>
                 {event.author}
               </p>
             </div>
-            <div className="link">
+            <div className='link'>
               <Link to={{
                 pathname: `events/${event._id}`,
                 state: event
               }}>
-                <img src={editIcon} alt="edit-icon" />
+                <img src={editIcon} alt='edit-icon' />
               </Link>
             </div>
           </div>
@@ -85,11 +85,11 @@ const Events = () => {
       </Wrapper>
       {pagination &&
         <ReactPaginate
-          breakLabel="..."
-          nextLabel="next >"
+          breakLabel='...'
+          nextLabel='next >'
           onPageChange={(e) => handlePagination(e)}
           pageCount={pagination}
-          previousLabel="< prev"
+          previousLabel='< prev'
           renderOnZeroPageCount={null}
         />
       }
