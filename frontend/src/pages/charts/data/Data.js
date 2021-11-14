@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Context } from '../../../context/Context';
+import { Context } from '../../../helpers/context/Context';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Table } from 'react-bootstrap';

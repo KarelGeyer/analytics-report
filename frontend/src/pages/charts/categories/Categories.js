@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Context } from '../../../context/Context';
+import { Context } from '../../../helpers/context/Context';
 
 import GraphWrapper from '../../../components/graphWrapper/GraphWrapper';
 import BarGraph from '../../../components/bar/Bar';

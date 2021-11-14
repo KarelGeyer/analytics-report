@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { Context } from '../../context/Context';
+import { Context } from '../../helpers/context/Context';
 import { Switch, Route } from 'react-router';
 import axios from 'axios';
 

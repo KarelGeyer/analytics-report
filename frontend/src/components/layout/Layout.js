@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Context } from '../../context/Context';
+import { Context } from '../../helpers/context/Context';
 import { Switch, Route } from 'react-router';
 
 import Header from '../header/Header';
