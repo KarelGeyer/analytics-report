@@ -28,7 +28,7 @@ npm start
 ### Technologies
 
 - React
-- React Bootstrap
+- (React Bootstrap)[https://react-bootstrap.github.io/]
 - Styled component
 - React router dom
 - ChartJs
