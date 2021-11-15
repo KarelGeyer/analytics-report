@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { parse } from 'papaparse';
 import axios from 'axios';
 
-import SuccessWrapper from '../../../components/SuccessWrapper/SuccessButton';
+import SuccessWrapper from '../../../components/successWrapper/SuccessButton';
 
 import { Section } from '../styles';
 
