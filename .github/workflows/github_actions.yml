@@ -20,14 +20,10 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v1
-      - uses: stefanoeb/eslint-action@1.0.2
 
       # Runs a single command using the runners shell
       - name: Try Install
         run: npm install
-        
-      - name: Try Lint
-        run: yarn lint
         
       - name: Try Build
         run: npm build
