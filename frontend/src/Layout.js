@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Context } from '../../helpers/context/Context';
+import { Context } from './helpers/context/Context';
 import { Switch, Route } from 'react-router';
 
-import Header from '../header/Header';
-import MaxWidth from '../max-width/MaxWidth';
+import WithMaxWidth from './hoc/withMaxWidth/withMaxWidth';
 
-import Charts from '../../pages/charts/Charts';
-import LoginForm from '../../pages/loginForm/LoginForm';
-import LoginError from '../../pages/loginForm/LoginError';
-import MainPage from '../../pages/mainPage/MainPage';
-import Account from '../../pages/account/Account';
-import Events from '../../pages/events/Events';
-import Event from '../../pages/events/event/Event';
+import Charts from './pages/charts/Charts';
+import LoginForm from './pages/loginForm/LoginForm';
+import LoginError from './pages/loginForm/LoginError';
+import MainPage from './pages/mainPage/MainPage';
+import Account from './pages/account/Account';
+import Events from './pages/events/Events';
+import Event from './pages/events/event/Event';
 
 const Layout = () => {
   const [state, setState] = useState('Products');
@@ -30,8 +29,6 @@ const Layout = () => {
 
   return (
     <>
-      <Header />
-      <MaxWidth>
         <Switch>
           <Route path='/login' render={(props) => (<LoginForm setUser={setUser} />)} />
           {user === null ?
@@ -49,9 +46,8 @@ const Layout = () => {
             </Context.Provider>
           }
         </Switch>
-      </MaxWidth>
     </>
   )
 };
 
-export default Layout;
+export default WithMaxWidth(Layout);
