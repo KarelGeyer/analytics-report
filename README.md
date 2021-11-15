@@ -29,7 +29,7 @@ npm start
 
 - [React](https://reactjs.org/)
 - [React Bootstrap](https://react-bootstrap.github.io/)
-- [Styled components](https://styled-components.com/]
+- [Styled components](https://styled-components.com/)
 - [React router dom](https://github.com/remix-run/react-router/blob/main/docs/getting-started/tutorial.md)
 - [ChartJs](https://www.chartjs.org/)
 - [Axios](https://axios-http.com/docs/intro)
