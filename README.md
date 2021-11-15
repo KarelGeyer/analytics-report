@@ -27,12 +27,12 @@ npm start
 
 ### Technologies
 
-- React
+- [React](https://reactjs.org/)
 - [React Bootstrap](https://react-bootstrap.github.io/)
-- Styled component
-- React router dom
-- ChartJs
-- Axios
+- [Styled components](https://styled-components.com/]
+- [React router dom](https://github.com/remix-run/react-router/blob/main/docs/getting-started/tutorial.md)
+- [ChartJs](https://www.chartjs.org/)
+- [Axios](https://axios-http.com/docs/intro)
 
 Next create your `.env` file and set port to http://localhost:3009.
 You can set it to other ports as well but you will need to update the preset URLs in `src/assets/static_data/StaticData.js`
@@ -40,13 +40,13 @@ You can set it to other ports as well but you will need to update the preset URL
 ## Backend
 ### Technologies
 
-- NodeJs
-- Express
-- MongoDB
-- JWT
-- nodemon
-- bcrypt
-- Joi
+- [NodeJs](https://nodejs.org/en/)
+- [Express](https://expressjs.com/)
+- [MongoDB](https://docs.mongodb.com/manual/)
+- [JWT](https://jwt.io/)
+- [Nodemon](https://nodemon.io/)
+- [Bcrypt](https://github.com/kelektiv/node.bcrypt.js#readme)
+- [Joi](https://joi.dev/api/?v=17.4.2#introduction)
 
 ### Database
 
