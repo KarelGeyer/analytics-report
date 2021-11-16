@@ -69,11 +69,9 @@ TOKEN_SECRET = (add your token here for security)
 
 ### Here are some ideas I would like to implement for the application:
 
-- Add Code Formatter -> possibly prettier, eslint
 - Improve design of the applicatiion
 - Create Logout Session Timeout
 - Create user roles -> specifically add admin roles
-- Backend routes documentation
 - Implement mailing system -> for user creation, for instace https://nodemailer.com/about/
 - Create an admin page -> to manage users for instance
 
