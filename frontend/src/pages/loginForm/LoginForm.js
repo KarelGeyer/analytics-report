@@ -32,7 +32,8 @@ const LoginForm = ({ setUser }) => {
         const data = res.data;
         const user = {
           token: data.token,
-          email: data.user.email
+          email: data.user.email,
+          role: data.user.role
         };
 
         localStorage.setItem('user', JSON.stringify(user));

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { deleteThisUser, updateThisUser } from '../../helpers/axios/userCalls';
+import { Link } from 'react-router-dom'
 
 import SuccessPopup from '../../components/popups/successPopup/SuccessPopup';
 import ErrorPopup from '../../components/popups/errorPopup/ErrorPopup';
@@ -45,6 +46,14 @@ const Account = () => {
       {success && <SuccessPopup link={link} event={success} />}
       {error && <ErrorPopup link='/' error={error} />}
       <Heading> Můj profil</Heading>
+      {user.role === 'admin' &&
+        <Link to={{
+          pathname: `admin`,
+          state: user
+        }}>
+          <button type='button'> Admin stránka </button>
+        </Link>
+      } 
       <Form onSubmit={submit}>
         <Wrapper>
           <label>
@@ -69,10 +78,10 @@ const Account = () => {
             onChange={(e) => setNewPassword(e.target.value)} />
         </Wrapper>
         <Wrapper>
-          <button type='submit' name='save' onClick={() => setShowPassword(!showPassword)}> Zobrazit Heslo </button>
+          <button type='button' name='show password' onClick={() => setShowPassword(!showPassword)}> Zobrazit Heslo </button>
           <button type='submit' name='save'> Uložit </button>
           <button type='button' name='delete' className='delete' onClick={deleteAccount}> Smazat účet </button>
-        </Wrapper>
+        </Wrapper>       
       </Form>
     </>
   );

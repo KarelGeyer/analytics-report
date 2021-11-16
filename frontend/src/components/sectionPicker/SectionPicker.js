@@ -38,8 +38,7 @@ const SectionPicker = () => {
         <div>
           <Wrapper>
             <h2> Choose Month </h2>
-            <input ref={monthRef} type='month' name='monthPicker' min='2021-07' max='2025-12' defaultValue={calendarDefault} />
-            <Button onClick={() => setSelectedMonth(selectMonth())}> Potvrď měsíc </Button>
+            <input ref={monthRef} type='month' name='monthPicker' min='2021-07' max='2025-12' defaultValue={calendarDefault} onChange={() => setSelectedMonth(selectMonth())} />
             <Link to='/charts/add-data'>
               <Button> Nová data </Button>
             </Link>

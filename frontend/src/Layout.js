@@ -11,6 +11,7 @@ import MainPage from './pages/mainPage/MainPage';
 import Account from './pages/account/Account';
 import Events from './pages/events/Events';
 import Event from './pages/events/event/Event';
+import Admin from './pages/admin/Admin';
 
 const Layout = () => {
   const [state, setState] = useState('Products');
@@ -40,6 +41,7 @@ const Layout = () => {
             }}>
               <Route path='/' exact component={MainPage} />
               <Route path='/account' component={Account} />
+              <Route path='/admin' component={Admin} />
               <Route path='/charts' component={Charts} />
               <Route path='/events' exact component={Events} />
               <Route path='/events/:id' component={Event} />
