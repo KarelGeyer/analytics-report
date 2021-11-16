@@ -17,8 +17,9 @@ app.use(cors());
 app.use('/analytics', data);
 app.use('/users', users);
 app.use('/events', events);
+
 app.get('/', (req, res) => {
-	res.send('welcome');
+	res.render('view.ejs');
 });
 
 const PORT = process.env.PORT;
