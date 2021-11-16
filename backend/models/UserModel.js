@@ -14,6 +14,9 @@ const UserModel = new mongoose.Schema({
 		type: Date,
 		default: Date.now
 	},
+	role: {
+		type: String
+	},
 	email: {
 		type: String,
 	},
@@ -25,6 +28,7 @@ const UserModel = new mongoose.Schema({
 export const joiUserSchema = Joi.object({
 	email: Joi.string().required().email(),
 	password: Joi.string().required().min(8).max(16),
+	role: Joi.string().required(),
 	newEmail: Joi.string().email(),
 	newPassword: Joi.string().min(8).max(16)
 });

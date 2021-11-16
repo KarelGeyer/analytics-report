@@ -45,7 +45,8 @@ export const createNewUser = async (req, res) => {
 
 		const newUser = await new User({
 			email: req.body.email,
-			password: hashedPassword
+			password: hashedPassword,
+			role: req.body.role
 		});
 
 		const savedUser = await newUser.save();
