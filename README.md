@@ -61,6 +61,7 @@ TOKEN_SECRET = (add your token here for security)
 ## Plan
 ### What is currently in progress:
 
+- implement GraphQL
 - Improve User managment
 - Unify token verification, use in all relevant scenarios
 - Unify responses and display them in popup on frontend
