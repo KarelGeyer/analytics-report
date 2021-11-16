@@ -65,6 +65,7 @@ TOKEN_SECRET = (add your token here for security)
 - Unify token verification, use in all relevant scenarios
 - Split code into more reusable components
 - Unify responses and display them in popup on frontend
+- Create form for uploading analytics data manualy
 
 ### Here are some ideas I would like to implement for the application:
 
