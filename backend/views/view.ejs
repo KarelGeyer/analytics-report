@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <div class="date"><b>Date: </b></div>
+  <div class="wrapper documentation">
+    <h1>
+      Welcome to Google Analytics API Documentation
+    </h1>
+    <h2>
+      In here we have 3 different endpoints:
+    </h2>
+    <div class="endpoints">
+      <div class="endpoint">
+        <h3>
+          /analytics
+        </h3>
+        <p>
+          returns google analytics data, all the data are fully fit to how they are supposed to be shown on the
+          frontend,
+          which is by month
+        </p>
+      </div>
+      <div class="endpoint">
+        <h3>
+          /users
+        </h3>
+        <p>
+          this is were all the users are stored, obviously you will not have an access to this endpoint
+        </p>
+      </div>
+      <div class="endpoint">
+        <h3>
+          /events
+        </h3>
+        <p>
+          returns list of events, this endpoint is also paginated. You can pass <span> ?page </span> and <span> &limit
+          </span> queries to control how many events you want to receive in the response
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="wrapper installation">
+    <h2>
+      Installation
+    </h2>
+    <ul class="list">
+      <li>
+        Go to <a href="https://github.com/KarelGeyer/analytics-report">this github repository</a>
+      </li>
+      <li>
+        Find a dropdown called --Code-- and copy the https
+      </li>
+      <li>
+        Open up your code editor, for example vs code and open terminal
+      </li>
+      <li>
+        Write `git clone` and paste the coppied URL
+      </li>
+      <li>
+        Write `cd backend`, then `npm install` to install all the dependencies
+      </li>
+      <li>
+        Create your own .env file to set several variables
+        <ul class="sub-list">
+          <li>
+            CONNECTION_URL - for this you will need to create your own Mongo DB database
+          </li>
+          <li>
+            PORT - this is where your project will run
+          </li>
+          <li>
+            TOKEN_SECRET - this is needed to make sure that your token will be properly hashed and secured
+          </li>
+        </ul>
+      </li>
+      <li>
+        And Finally run `npm start`
+      </li>
+    </ul>
+  </div>
+  <div class="wrapper technologies">
+    <h2>
+      Technologies
+    </h2>
+    <ul class="list">
+      <li>
+        <a href="https://docs.mongodb.com/manual/">MongoDB</a> - Database
+      </li>
+      <li>
+        <a href="https://expressjs.com/">Express</a> - Node.js framework for web apps
+      </li>
+      <li>
+        <a href="https://nodemon.io/">Nodemon</a> - Automatically restarts the app after change
+      </li>
+      <li>
+        <a href="https://www.npmjs.com/package/bcrypt">Bcrypt</a> - So your passwords are secured
+      </li>
+      <li>
+        <a href="https://jwt.io/">JWT</a> - JSON web token
+      </li>
+      <li>
+        <a href="https://www.npmjs.com/package/joi">Joi</a> - For validation
+      </li>
+      <li>
+        <a href="https://ejs.co/">EJS</a> - For templates such as this one
+      </li>
+      <li>
+        <a href="https://www.npmjs.com/package/dotenv">Dotenv</a> - For local environemt variables
+      </li>
+    </ul>
+  </div>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 40px;
+    }
+
+    .wrapper {
+      border: 1px solid black;
+      padding: 10px;
+      margin: 10px 0;
+      box-shadow: 5px 5px 20px 5px #888888;
+    }
+
+    .installation {
+      width: 49%;
+      float: left;
+    }
+
+    .technologies {
+      margin-left: 2%;
+      width: 49%;
+      float: left;
+    }
+
+    .endpoints {
+      display: flex;
+    }
+
+    .endpoint {
+      border: 1px solid black;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    .list {
+      padding: 0 15px;
+    }
+
+    .sub-list {
+      padding: 0 15px;
+    }
+
+    h1 {
+      color: rgb(32, 31, 32);
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid black;
+    }
+
+    h3 {
+      background-color: grey;
+      color: white;
+    }
+
+    li {
+      margin-top: 5px;
+    }
+  </style>
+  <script async defer>
+    const date = new Date();
+    const dateFormatted = date.toDateString()
+
+    const element = document.querySelector('.date');
+    element.append(dateFormatted);
+  </script>
+</body>
+
+</html>
